@@ -1,0 +1,78 @@
+<html>
+    <head>
+        
+        <style>
+        .button {
+        background-color: #4CAF50;
+        border: none;
+        color: white;
+        padding: 14px 30px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 14px;
+        margin: 4px 2px;
+        cursor: pointer;
+        
+        }
+    </style>
+    <style> 
+        input[type=text] 
+        {
+        width: 100%;
+        padding: 15px 20px;
+        margin: 8px 0;
+        box-sizing: border-box;
+        }
+    </style>
+
+       
+
+
+        <script>
+            
+            function calc3()
+            {
+
+                var val_sprit = document.getElementById("sprit").value;
+                var val_sprit_3 = document.getElementById("quantity_3").value;
+                document.getElementById('result_3').value = val_sprit*val_sprit_3;
+            }
+            
+
+
+        </script>
+        
+    </head>
+    <body>
+
+        <p>Select the type of Drink</p>
+        <select name="sprit" id="sprit">
+        <option value="1">30ml High Strength Spirit Nip 40% Alc. Vol</option>
+        <option value="22">700ml High Strength Bottle of Spirits 40% Alc. Vol</option>
+        <option value="1.1">275ml Full Strength Ready To Drink 5% Alc. Vol</option>
+        <option value="1.2">330ml Full Strength Ready To Drink 5% Alc. Vol</option>
+        <option value="2.6">660ml Full Strength Ready To Drink 5% Alc. Vol</option>
+        <option value="1.5">275ml High Strength Ready To Drink 7% Alc. Vol</option>
+        <option value="1.8">330ml High Strength Ready To Drink 7% Alc. Vol</option>
+        </select>
+
+            
+        <form>
+        <p></p>
+        <p>Select the quantity</p>
+        <input type="number" value="0" name="quantity_3" min="1" max="15" id= "quantity_3">
+        <p><p>
+        <button class= "button" type="button" onclick="calc3()">Check</button>
+        <input type="text" id="result_3"/>
+        <p><p>
+        <button class= "button"  type="reset" onclick="Reset" >Reset</button>
+        </form>
+        
+        
+    </body>
+</html>
+
+
+
+
