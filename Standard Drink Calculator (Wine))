@@ -1,0 +1,77 @@
+<html>
+    <head>
+
+        
+        <style>
+        .button {
+        background-color: #4CAF50;
+        border: none;
+        color: white;
+        padding: 14px 30px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 14px;
+        margin: 4px 2px;
+        cursor: pointer;
+        
+        }
+    </style>
+    <style> 
+        input[type=text] {
+        width: 100%;
+        padding: 15px 20px;
+        margin: 8px 0;
+        box-sizing: border-box;
+  
+        }
+
+    </style>
+
+
+       
+        <script>
+            
+            function calc1()
+            {
+
+                var val_wine = document.getElementById("Wine").value;
+                var val_wine_1 = document.getElementById("quantity_1").value;
+                document.getElementById('result_1').value = val_wine*val_wine_1;
+            }
+            
+        </script>
+        
+    </head>
+    <body>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <div class="w3-dropdown-hover">
+<p>Select the type of Drink</p>
+        <select name="Wine" id="Wine">
+        <option value="1.5"> 150ml Average Restaurant Serving of Red Wine 13% Alc.Vol</option>
+        <option value="1.0"> 100ml Standard Serve of Red Wine 13% Alc. Vol</option>
+        <option value="0.8"> 60ml Standard Serve of Port 17.5% Alc. Vol</option>
+        <option value="1.4"> 150ml Average Restaurant Serving of White Wine 11.5% Alc. Vol</option>
+        <option value="0.9"> 100ml Standard Serve of White Wine 11.5% Alc. Vol</option>
+        </select>
+
+            
+        <form>
+        <p></p>
+        <p>Select the quantity</p>
+        <input type="number" value="0"name="quantity_1" min="1" max="15" id= "quantity_1">
+        <p><p>
+        <button class= "button" type="button" onclick="calc1()">Check</button>
+        <input type="text" id="result_1"/>
+        <p><p>
+        <button class= "button"  type="reset" onclick="Reset" >Reset</button>
+        </form>
+    
+        
+    </body>
+</html>
+
+
+
+
