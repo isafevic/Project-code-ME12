@@ -1,0 +1,71 @@
+<html>
+    <head>
+        
+    <style>
+        .button {
+        background-color: #4CAF50;
+        border: none;
+        color: white;
+        padding: 14px 30px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 14px;
+        margin: 4px 2px;
+        cursor: pointer;
+        
+        }
+
+    </style>
+    <style> 
+        input[type=text] 
+        {
+        width: 100%;
+        padding: 15px 20px;
+        margin: 8px 0;
+        box-sizing: border-box;
+        }
+
+    </style>
+
+       
+        <script>
+            
+            function calc2()
+            {
+
+                var val_Champagne = document.getElementById("Champagne").value;
+                var val_Champagne_1 = document.getElementById("quantity_2").value;
+                document.getElementById('result_2').value = val_Champagne*val_Champagne_1;
+            }
+            
+        </script>
+        
+    </head>
+    <body>
+
+        <p>Select the type of Drink</p>
+        <select name="Champagne" id="Champagne">
+        <option value="1.4"> 150ml Average Restaurant Serve of Champagne 12% Alc. Vol</option>
+        <option value="7.1"> 750ml Bottle of Champagne 12% Alc. Vol</option>
+        </select>
+
+            
+        <form>
+        <p></p>
+        <p>Select the quantity</p>
+        <input type="number" value="0"name="quantity_2" min="1" max="15" id= "quantity_2">
+        <p><p>
+        <button class= "button" type="button" onclick="calc2()">Check</button>
+        <input type="text" id="result_2"/>
+        <p><p>
+        <button class= "button"  type="reset" onclick="Reset" >Reset</button>
+        </form>
+        
+        
+    </body>
+</html>
+
+
+
+
