@@ -1,0 +1,110 @@
+<html>
+    <head>
+    <style>
+   
+        .button
+      {
+        background-color: #4CAF50;
+        border: none;
+        color: white;
+        padding: 14px 30px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 14px;
+        margin: 4px 2px;
+        cursor: pointer;
+        
+        }
+      
+        input[type=text] {
+        width: 100%;
+        padding: 15px 20px;
+        margin: 8px 0;
+        box-sizing: border-box;
+  
+        }
+      
+        input[type=number] {
+        width: 100%;
+        padding: 15px 20px;
+        margin: 8px 10;
+        box-sizing: border-box;
+        background-color: lightblue;
+        font-size: 14px;
+         text-decoration: none;
+        }
+      
+      
+ 
+
+    </style>
+
+        <script>
+            
+            function calc()
+            {
+
+              var val_beer = document.getElementById("Beer").value;
+              var val_beer_1 = document.getElementById("quantity").value;
+              document.getElementById('result').value = val_beer*val_beer_1;
+              
+              var check;
+              if (val_beer == 1.1){ check = 114;}
+              else if (val_beer == 0.8){check = 91;}
+              else if (val_beer == 0.6){check = 88;}
+              else if (val_beer == 1.6){check = 170;}
+              else if (val_beer == 1.2){check = 136;}
+              else if (val_beer == 0.9){check = 132;}
+              else if (val_beer == 1.4){check = 150;}
+              else if (val_beer == 1)  {check = 120;}
+              else if (val_beer == 0.8){check = 116;}
+              document.getElementById('result2').value = check*val_beer_1;
+              
+            }
+            
+          
+        </script>
+        
+    </head>
+    <body>
+        <form>
+  
+          
+         <div class="box">
+        <p>Select the type of Drink</p> 
+        <select id="Beer">
+        <option value="1.1"> 285ml Small Beer - Full Strength 4.8% Alc. Vol</option>
+        <option value="0.8"> 285ml Small Beer - Mid Strength 3.5% Alc. Vol</option>
+        <option value="0.6"> 285ml Small Beer - Low Strength 2.7% Alc. Vol</option>
+        <option value="1.6"> 425ml Large Beer - Full Strength 4.8% Alc. Vol</option>
+        <option value="1.2"> 425ml Large Beer - Mid Strength 3.5% Alc. Vol</option>
+        <option value="0.9"> 425ml Large Beer - Low Strength 2.7% Alc. Vol</option>
+        <option value="1.4"> 375ml Beer Can   - Full Strength 4.8% Alc. Vol</option>
+        <option value="1"> 375ml Beer Can  - Mid Strength 3.5% Alc. Vol</option>
+        <option value="0.8"> 375ml Beer Can   - Low Strength 2.7% Alc. Vol</option>
+        </select>
+
+
+        <p></p>
+        <p>Select the quantity<p>
+        <input type="number" value="0" name="quantity" min="1" max="15" id= "quantity">
+         
+        <p><p>
+        <button class="button" type="button" onclick="calc()">Check</button>
+        
+        <p>Standard drink<p>
+        <input value="0" type="text" id="result"/>
+         
+        <p>Calories<p>
+        <input value="0"type="text" id="result2"/>
+          
+          
+        <button class= "button"  type="reset" onclick="Reset" >Reset</button>
+        </form>
+    
+        
+        
+    </body>
+</html>
+
