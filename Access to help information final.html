@@ -1,0 +1,2977 @@
+<!doctype html>
+<html>
+
+<head>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/js/select2.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/css/select2.min.css" rel="stylesheet" />
+</head>
+<style>
+     input[type=button] {
+        color: #000000;
+        background-color: rgba(169,169,169, 0.8);
+        font: 2.4em Futura, ‘Century Gothic’, AppleGothic, sans-serif;
+        font-size: 100%;
+        padding: 14px;
+        -moz-border-radius: 10px;
+        -webkit-border-radius: 10px;
+        border-radius: 10px;
+        border-bottom: 1px solid #9f9f9f;
+        -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5);
+        -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5);
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5);
+        cursor: pointer;
+    }
+
+    input[type=button]:hover {
+        background-color: rgba(255, 255, 255, 0.8);
+        color: #08233e;
+    }
+</style>
+
+<body>
+
+    <!-- Dropdown -->
+    <select id='selUser' style='width: 100%;'>
+        <option value="---Search Bar From Here---" selected>---Search Bar From Here---</option>
+        <option value="Aerial Events">Aerial Events</option>
+        <option value="Albion Hotel">Albion Hotel</option>
+        <option value="Alchemist's Refuge">Alchemist's Refuge</option>
+        <option value="Alto Events">Alto Events</option>
+        <option value="Alumbra">Alumbra</option>
+        <option value="Astor Hotel">Astor Hotel</option>
+        <option value="Atrium Bar">Atrium Bar</option>
+        <option value="Bar 420">Bar 420</option>
+        <option value="Bar Americano">Bar Americano</option>
+        <option value="Bar Ampere">Bar Ampere</option>
+        <option value="Bar Humbug">Bar Humbug</option>
+        <option value="Bar Nicional">Bar Nicional</option>
+        <option value="Baroq House">Baroq House</option>
+        <option value="Bartronica">Bartronica</option>
+        <option value="Batman's Hill On Collins Hotel">Batman's Hill On Collins Hotel</option>
+        <option value="Beer De Luxe">Beer De Luxe</option>
+        <option value="Belgian Beer Cafe Melbourne">Belgian Beer Cafe Melbourne</option>
+        <option value="Bennetts Lane Jazz Club">Bennetts Lane Jazz Club</option>
+        <option value="Black Opal">Black Opal</option>
+        <option value="Blue Diamond">Blue Diamond</option>
+        <option value="Blue Moon Bar">Blue Moon Bar</option>
+        <option value="Bobbie Peels">Bobbie Peels</option>
+        <option value="Boilermaker House">Boilermaker House</option>
+        <option value="Bomba Tapas Bar and Rooftop">Bomba Tapas Bar and Rooftop</option>
+        <option value="Bond Melbourne">Bond Melbourne</option>
+        <option value="Bornga">Bornga</option>
+        <option value="Botanical Hotel">Botanical Hotel</option>
+        <option value="Bull And Bear Tavern">Bull And Bear Tavern</option>
+        <option value="Burger Theory | The Hills Rooftop | The Tuxedo Cat">Burger Theory | The Hills Rooftop | The
+            Tuxedo Cat</option>
+        <option value="Cabinet Bar ">Cabinet Bar </option>
+        <option value="Cafe Lavita On William ">Cafe Lavita On William </option>
+        <option value="Campari House">Campari House</option>
+        <option value="Candela Nuevo">Candela Nuevo</option>
+        <option value="Captain Melville ">Captain Melville </option>
+        <option value="Captains Bar ">Captains Bar </option>
+        <option value="Carlton Yacht Club Bar">Carlton Yacht Club Bar</option>
+        <option value="Central Club Hotel">Central Club Hotel</option>
+        <option value="Chaise Lounge">Chaise Lounge</option>
+        <option value="Charlie's Bar">Charlie's Bar</option>
+        <option value="Charltons Entertainment Complex | Roxanne Bar">Charltons Entertainment Complex | Roxanne Bar
+        </option>
+        <option value="CitiClub On Queen Hotel ">CitiClub On Queen Hotel </option>
+        <option value="Clique Bar">Clique Bar</option>
+        <option value="Clocks At Flinders Street Station">Clocks At Flinders Street Station</option>
+        <option value="Club 23">Club 23</option>
+        <option value="Club Asuka">Club Asuka</option>
+        <option value="Clyde Hotel">Clyde Hotel</option>
+        <option value="Co">Co</option>
+        <option value="Cocoon Bar">Cocoon Bar</option>
+        <option value="Cohen Cellars Wine Bar">Cohen Cellars Wine Bar</option>
+        <option value="Collins Quarter ">Collins Quarter </option>
+        <option value="Cookie">Cookie</option>
+        <option value="Coopers Inn">Coopers Inn</option>
+        <option value="CQ Bar">CQ Bar</option>
+        <option value="Crown Entertainment Complex">Crown Entertainment Complex</option>
+        <option value="Crown Plaza">Crown Plaza</option>
+        <option value="Dan O'Connell Hotel">Dan O'Connell Hotel</option>
+        <option value="DANSK Restaurant">DANSK Restaurant</option>
+        <option value="Dikstein's Corner Bar">Dikstein's Corner Bar</option>
+        <option value="Ding Dong Lounge">Ding Dong Lounge</option>
+        <option value="Disco Bar">Disco Bar</option>
+        <option value="Double Happiness Bar | New Gold Mountain">Double Happiness Bar | New Gold Mountain</option>
+        <option value="Dreams Gentlemen's Club">Dreams Gentlemen's Club</option>
+        <option value="E J Whitten Bar ">E J Whitten Bar </option>
+        <option value="Eau-De-Vie ">Eau-De-Vie </option>
+        <option value="Eden Bar">Eden Bar</option>
+        <option value="El Coco">El Coco</option>
+        <option value="Epocha Restaurant">Epocha Restaurant</option>
+        <option value="Equinox Bar Restaurant">Equinox Bar Restaurant</option>
+        <option value="Escape City">Escape City</option>
+        <option value="Euro House | Pulp Club">Euro House | Pulp Club</option>
+        <option value="European Bier Cafe">European Bier Cafe</option>
+        <option value="Exford Hotel">Exford Hotel</option>
+        <option value="Fad Gallery">Fad Gallery</option>
+        <option value="Father's Office">Father's Office</option>
+        <option value="Ferdydurke">Ferdydurke</option>
+        <option value="Fiftyfive">Fiftyfive</option>
+        <option value="Fireflies Club">Fireflies Club</option>
+        <option value="Flemington & Kensington RSL Club">Flemington & Kensington RSL Club</option>
+        <option value="FM Karaoke Bar">FM Karaoke Bar</option>
+        <option value="Forum Theatre Bar">Forum Theatre Bar</option>
+        <option value="Gami Chicken and Beer">Gami Chicken and Beer</option>
+        <option value="Garden State Hotel">Garden State Hotel</option>
+        <option value="Gin Palace">Gin Palace</option>
+        <option value="GoGo Bar ">GoGo Bar </option>
+        <option value="Goldilocks">Goldilocks</option>
+        <option value="Good Heavens">Good Heavens</option>
+        <option value="Gr8 Bar">Gr8 Bar</option>
+        <option value="Great Western Hotel">Great Western Hotel</option>
+        <option value="Hairy Canary">Hairy Canary</option>
+        <option value="Harbour Town Hotel">Harbour Town Hotel</option>
+        <option value="Harley House">Harley House</option>
+        <option value="Heartbreaker">Heartbreaker</option>
+        <option value="Hell's Kitchen">Hell's Kitchen</option>
+        <option value="Henry St Brewhouse">Henry St Brewhouse</option>
+        <option value="Highlander Bar">Highlander Bar</option>
+        <option value="HiHou">HiHou</option>
+        <option value="HJC Bar">HJC Bar</option>
+        <option value="Holiday Inn On Flinders Melbourne">Holiday Inn On Flinders Melbourne</option>
+        <option value="Horse Bazaar">Horse Bazaar</option>
+        <option value="Hotel Lincoln">Hotel Lincoln</option>
+        <option value="Hotel Sophia">Hotel Sophia</option>
+        <option value="Hotel Spencer Bar & Dining Room">Hotel Spencer Bar & Dining Room</option>
+        <option value="House of Maximon | Berlin Bar">House of Maximon | Berlin Bar</option>
+        <option value="Hoyts">Hoyts</option>
+        <option value="Hush Bar @ Melbourne Central">Hush Bar @ Melbourne Central</option>
+        <option value="Idarts Hive">Idarts Hive</option>
+        <option value="Igloo Cafe & St Moritz Bar">Igloo Cafe & St Moritz Bar</option>
+        <option value="Imperial Hotel">Imperial Hotel</option>
+        <option value="Insignia on Flinders">Insignia on Flinders</option>
+        <option value="Island Somewhere">Island Somewhere</option>
+        <option value="Jack & Bones">Jack & Bones</option>
+        <option value="Jackpot Bar">Jackpot Bar</option>
+        <option value="Jankara Karaoke">Jankara Karaoke</option>
+        <option value="Joe Taylor">Joe Taylor</option>
+        <option value="Karaoke Box">Karaoke Box</option>
+        <option value="Karstens At CQ ">Karstens At CQ </option>
+        <option value="Kingpin Bowling Crown | Playtime">Kingpin Bowling Crown | Playtime</option>
+        <option value="La Di Da">La Di Da</option>
+        <option value="La La Land">La La Land</option>
+        <option value="Lagerfield Bar & Beer Garden">Lagerfield Bar & Beer Garden</option>
+        <option value="Lagers On Lygon">Lagers On Lygon</option>
+        <option value="Left Bank Melbourne">Left Bank Melbourne</option>
+        <option value="Legends Bar">Legends Bar</option>
+        <option value="Limerick Castle Hotel & Restaurant">Limerick Castle Hotel & Restaurant</option>
+        <option value="Little Red Pocket">Little Red Pocket</option>
+        <option value="Locker Room Club Bar">Locker Room Club Bar</option>
+        <option value="Loop Project Space & Bar">Loop Project Space & Bar</option>
+        <option value="Magic Mountain Saloon">Magic Mountain Saloon</option>
+        <option value="Mail Exchange Hotel">Mail Exchange Hotel</option>
+        <option value="Manchuria">Manchuria</option>
+        <option value="Marrakech Bar">Marrakech Bar</option>
+        <option value="Max Watt's">Max Watt's</option>
+        <option value="McMahons">McMahons</option>
+        <option value="Meatball & Wine Bar">Meatball & Wine Bar</option>
+        <option value="Melbourne Black Rabbit">Melbourne Black Rabbit</option>
+        <option value="Melbourne Central Lion Hotel">Melbourne Central Lion Hotel</option>
+        <option value="Melbourne Savage Club">Melbourne Savage Club</option>
+        <option value="Mesa Verde">Mesa Verde</option>
+        <option value="Mesh|Tonic Bar">Mesh|Tonic Bar</option>
+        <option value="Metropolitan Hotel">Metropolitan Hotel</option>
+        <option value="Metropolitan Hotel">Metropolitan Hotel</option>
+        <option value="Mitre Tavern">Mitre Tavern</option>
+        <option value="Mon Bijou">Mon Bijou</option>
+        <option value="Mrs Parma's ">Mrs Parma's </option>
+        <option value="Ms Collins">Ms Collins</option>
+        <option value="Mui Karaoke">Mui Karaoke</option>
+        <option value="Munich Brau Haus">Munich Brau Haus</option>
+        <option value="Mural Hall">Mural Hall</option>
+        <option value="Murmur">Murmur</option>
+        <option value="Network Public Bar & Pizzeria">Network Public Bar & Pizzeria</option>
+        <option value="New Guernica">New Guernica</option>
+        <option value="Nieuw Amsterdam">Nieuw Amsterdam</option>
+        <option value="Nomads Industry Backpackers">Nomads Industry Backpackers</option>
+        <option value="Oak & Vine Bar">Oak & Vine Bar</option>
+        <option value="P J O'Briens Irish Pub & Side Bar">P J O'Briens Irish Pub & Side Bar</option>
+        <option value="Papa Goose | Mary Fortune Cocktail Bar">Papa Goose | Mary Fortune Cocktail Bar</option>
+        <option value="Paris Cat Jazz Club">Paris Cat Jazz Club</option>
+        <option value="Partyworld">Partyworld</option>
+        <option value="Pearson and Murph'y Cafe">Pearson and Murph'y Cafe</option>
+        <option value="Penny Blue">Penny Blue</option>
+        <option value="Players On Lygon">Players On Lygon</option>
+        <option value="Plus 5">Plus 5</option>
+        <option value="Polepole Bar">Polepole Bar</option>
+        <option value="Portland Hotel">Portland Hotel</option>
+        <option value="QT Melbourne">QT Melbourne</option>
+        <option value="Ra">Ra</option>
+        <option value="RACV City Club">RACV City Club</option>
+        <option value="Rainbow Karaoke">Rainbow Karaoke</option>
+        <option value="Randy Dragon">Randy Dragon</option>
+        <option value="Red Love Bar Musicroom">Red Love Bar Musicroom</option>
+        <option value="RMIT Village Melbourne">RMIT Village Melbourne</option>
+        <option value="Romeo Lane">Romeo Lane</option>
+        <option value="Rooftop Cinema & Bar">Rooftop Cinema & Bar</option>
+        <option value="Royce Hotel">Royce Hotel</option>
+        <option value="RU-CO">RU-CO</option>
+        <option value="Rumour Restaurant Bar & Lounge">Rumour Restaurant Bar & Lounge</option>
+        <option value="Sahara Restaurant">Sahara Restaurant</option>
+        <option value="Saint & Rogue">Saint & Rogue</option>
+        <option value="Sake Restaurant and Bar">Sake Restaurant and Bar</option>
+        <option value="Seamstress">Seamstress</option>
+        <option value="Sebel Melbourne - Flinders Lane">Sebel Melbourne - Flinders Lane</option>
+        <option value="Section 8 Bar">Section 8 Bar</option>
+        <option value="Shanghai Club">Shanghai Club</option>
+        <option value="Sister Bellas">Sister Bellas</option>
+        <option value="Soho Restaurant & Bar">Soho Restaurant & Bar</option>
+        <option value="Spearmint Rhino Gentlemen's Club">Spearmint Rhino Gentlemen's Club</option>
+        <option value="Spice Market">Spice Market</option>
+        <option value="Spleen Central">Spleen Central</option>
+        <option value="Spotless Services">Spotless Services</option>
+        <option value="Stars KTV and Lounge">Stars KTV and Lounge</option>
+        <option value="Strike Bowling">Strike Bowling</option>
+        <option value="Strike Melbourne Central">Strike Melbourne Central</option>
+        <option value="The Adelphi Hotel">The Adelphi Hotel</option>
+        <option value="The Apartment Restaurant Club Lounge">The Apartment Restaurant Club Lounge</option>
+        <option value="The Atlantic|The Den |The Oyster Bar & Grill| Fish & Chippery by The Atlantic">The Atlantic|The
+            Den |The Oyster Bar & Grill| Fish & Chippery by The Atlantic</option>
+        <option value="The Australian Club">The Australian Club</option>
+        <option value="The Backlot Studios ">The Backlot Studios </option>
+        <option value="the Barre">the Barre</option>
+        <option value="The Beaufort">The Beaufort</option>
+        <option value="The Butterfly Club">The Butterfly Club</option>
+        <option value="The Carlton Hotel">The Carlton Hotel</option>
+        <option value="The Castle Hotel">The Castle Hotel</option>
+        <option value="The Charles Dickens Tavern">The Charles Dickens Tavern</option>
+        <option value="The Courthouse Hotel">The Courthouse Hotel</option>
+        <option value="The Croft Institute">The Croft Institute</option>
+        <option value="The Curtin">The Curtin</option>
+        <option value="The Drunken Poet Pty Ltd">The Drunken Poet Pty Ltd</option>
+        <option value="The Elephant and Wheelbarrow">The Elephant and Wheelbarrow</option>
+        <option value="The Emerald Peacock">The Emerald Peacock</option>
+        <option value="The European">The European</option>
+        <option value="The Fair Trader Cafe">The Fair Trader Cafe</option>
+        <option value="The Fringe">The Fringe</option>
+        <option value="The Irish Times">The Irish Times</option>
+        <option value="The Joint Bar">The Joint Bar</option>
+        <option value="The Last Jar">The Last Jar</option>
+        <option value="The Leveson">The Leveson</option>
+        <option value="The Long Room">The Long Room</option>
+        <option value="The Lounge">The Lounge</option>
+        <option value="The Medallion Club">The Medallion Club</option>
+        <option value="The Meeting Place">The Meeting Place</option>
+        <option value="The Men's Gallery">The Men's Gallery</option>
+        <option value="The Mill">The Mill</option>
+        <option value="The Mill House Bar">The Mill House Bar</option>
+        <option value="The Mug House">The Mug House</option>
+        <option value="The Nixon Hotel">The Nixon Hotel</option>
+        <option value="The Oxford Scholar Hotel">The Oxford Scholar Hotel</option>
+        <option value="The Public Bar">The Public Bar</option>
+        <option value="The Quiet Man Irishman  Pub">The Quiet Man Irishman Pub</option>
+        <option value="The Sherlock Holmes Inn">The Sherlock Holmes Inn</option>
+        <option value="The Toff In Town">The Toff In Town</option>
+        <option value="The Turf Bar & Restaurant">The Turf Bar & Restaurant</option>
+        <option value="The Waiting Room">The Waiting Room</option>
+        <option value="Therapy">Therapy</option>
+        <option value="Townhall Hotel North Melbourne">Townhall Hotel North Melbourne</option>
+        <option value="Tramp Bar">Tramp Bar</option>
+        <option value="Transit Rooftop Bar">Transit Rooftop Bar</option>
+        <option value="Transport Hotel">Transport Hotel</option>
+        <option value="Trapt Bar & Escape Rooms">Trapt Bar & Escape Rooms</option>
+        <option value="Troika Bar ">Troika Bar </option>
+        <option value="Turf Club Hotel ">Turf Club Hotel </option>
+        <option value="UBar">UBar</option>
+        <option value="Union Electric">Union Electric</option>
+        <option value="University Hotel">University Hotel</option>
+        <option value="University House Club">University House Club</option>
+        <option value="Urban Central Accomodation | bar334">Urban Central Accomodation | bar334</option>
+        <option value="Vacant">Vacant</option>
+        <option value="Velvet Bar">Velvet Bar</option>
+        <option value="Vibe Hotel">Vibe Hotel</option>
+        <option value="Victoria Hotel">Victoria Hotel</option>
+        <option value="Vodka Temple">Vodka Temple</option>
+        <option value="VS Sports Bar">VS Sports Bar</option>
+        <option value="Waterfront Venues">Waterfront Venues</option>
+        <option value="Waterside Hotel">Waterside Hotel</option>
+        <option value="Welcome Stranger">Welcome Stranger</option>
+        <option value="West Village NYC">West Village NYC</option>
+        <option value="Whiskey Den ">Whiskey Den </option>
+        <option value="Whisky and Alement">Whisky and Alement</option>
+        <option value="Wolfs Lair">Wolfs Lair</option>
+        <option value="Word">Word</option>
+        <option value="Workshop">Workshop</option>
+        <option value="Xiang Club">Xiang Club</option>
+        <option value="Young & Jacksons">Young & Jacksons</option>
+        <option value="Zinc at Federation Square">Zinc at Federation Square</option>
+    </select>
+
+    <input type='button' value='Select Bar' id='but_read'>
+    <div id='result'></div>
+    <div id="map"></div>
+    <script>
+        var dataFromR = [
+            {
+                "address": "25 Bennetts Lane",
+                "area": "Melbourne (CBD)",
+                "name": "Bennetts Lane Jazz Club",
+                "x": 144.9676,
+                "y": -37.8089,
+                "hospital": "Victoria Parade Surgery Centre",
+                "police": ["Fitzroy", "Melbourne East", "Melbourne North"],
+                "pharma": 27
+            },
+            {
+                "address": "27-37 Russell Street",
+                "area": "Melbourne (CBD)",
+                "name": "Whiskey Den ",
+                "x": 144.9692,
+                "y": -37.816,
+                "hospital": "Jolimont Endoscopy Centre",
+                "police": ["Melbourne East", "Southbank"],
+                "pharma": 32
+            },
+            {
+                "address": "315-321 Elizabeth Street",
+                "area": "Melbourne (CBD)",
+                "name": "The Meeting Place",
+                "x": 144.9615,
+                "y": -37.8112,
+                "hospital": "Victoria Parade Surgery Centre",
+                "police": ["Melbourne East", "Melbourne North", "Melbourne West", "Melbourne West Precinct Policing", "Transit Safety Division"],
+                "pharma": 41
+            },
+            {
+                "address": "4-6 Goldie Place",
+                "area": "Melbourne (CBD)",
+                "name": "Paris Cat Jazz Club",
+                "x": 144.9608,
+                "y": -37.8135,
+                "hospital": "Victoria Parade Surgery Centre",
+                "police": ["Melbourne East", "Melbourne West", "Melbourne West Precinct Policing", "Southbank", "Transit Safety Division"],
+                "pharma": 44
+            },
+            {
+                "address": "614-616 Elizabeth Street",
+                "area": "Carlton",
+                "name": "The Last Jar",
+                "x": 144.9589,
+                "y": -37.8039,
+                "hospital": "Melbourne Private Hospital",
+                "police": ["Melbourne North", "Melbourne West", "Melbourne West Precinct Policing"],
+                "pharma": 12
+            },
+            {
+                "address": "415-421 Rathdowne Street",
+                "area": "Carlton",
+                "name": "The Beaufort",
+                "x": 144.9704,
+                "y": -37.7965,
+                "hospital": "Melbourne Private Hospital",
+                "police": ["Fitzroy", "Melbourne North"],
+                "pharma": 4
+            },
+            {
+                "address": "163-169 Russell Street",
+                "area": "Melbourne (CBD)",
+                "name": "Eden Bar",
+                "x": 144.9676,
+                "y": -37.8125,
+                "hospital": "Victoria Parade Surgery Centre",
+                "police": ["Melbourne East", "Melbourne West", "Melbourne West Precinct Policing"],
+                "pharma": 39
+            },
+            {
+                "address": "313-315 Flinders Lane",
+                "area": "Melbourne (CBD)",
+                "name": "Randy Dragon",
+                "x": 144.9639,
+                "y": -37.8176,
+                "hospital": "Jolimont Endoscopy Centre",
+                "police": ["Melbourne East", "Melbourne West", "Melbourne West Precinct Policing", "Southbank", "Transit Safety Division"],
+                "pharma": 38
+            },
+            {
+                "address": "223-227 Canning Street",
+                "area": "Carlton",
+                "name": "Dan O'Connell Hotel",
+                "x": 144.9734,
+                "y": -37.793,
+                "hospital": "St Vincent's Hospital",
+                "police": ["Fitzroy"],
+                "pharma": 2
+            },
+            {
+                "address": "125-127 Flinders Lane",
+                "area": "Melbourne (CBD)",
+                "name": "GoGo Bar ",
+                "x": 144.9704,
+                "y": -37.8157,
+                "hospital": "Jolimont Endoscopy Centre",
+                "police": ["Melbourne East"],
+                "pharma": 31
+            },
+            {
+                "address": "427-457 Swanston Street",
+                "area": "Melbourne (CBD)",
+                "name": "The Oxford Scholar Hotel",
+                "x": 144.9627,
+                "y": -37.8083,
+                "hospital": "Victoria Parade Surgery Centre",
+                "police": ["Melbourne East", "Melbourne North", "Melbourne West", "Melbourne West Precinct Policing"],
+                "pharma": 27
+            },
+            {
+                "address": "52 La Trobe Street",
+                "area": "Melbourne (CBD)",
+                "name": "Karaoke Box",
+                "x": 144.9672,
+                "y": -37.8083,
+                "hospital": "Victoria Parade Surgery Centre",
+                "police": ["Fitzroy", "Melbourne East", "Melbourne North"],
+                "pharma": 26
+            },
+            {
+                "address": "21-25 Hardware Lane",
+                "area": "Melbourne (CBD)",
+                "name": "Campari House",
+                "x": 144.9613,
+                "y": -37.8141,
+                "hospital": "Victoria Parade Surgery Centre",
+                "police": ["Melbourne East", "Melbourne West", "Melbourne West Precinct Policing", "Southbank", "Transit Safety Division"],
+                "pharma": 45
+            },
+            {
+                "address": "66-88 Lygon Street",
+                "area": "Carlton",
+                "name": "Lagers On Lygon",
+                "x": 144.9666,
+                "y": -37.8053,
+                "hospital": "St Vincent's Hospital",
+                "police": ["Fitzroy", "Melbourne East", "Melbourne North"],
+                "pharma": 9
+            },
+            {
+                "address": "401-405 Little Bourke Street",
+                "area": "Melbourne (CBD)",
+                "name": "The Apartment Restaurant Club Lounge",
+                "x": 144.961,
+                "y": -37.814,
+                "hospital": "Victoria Parade Surgery Centre",
+                "police": ["Melbourne East", "Melbourne West", "Melbourne West Precinct Policing", "Southbank", "Transit Safety Division"],
+                "pharma": 45
+            },
+            {
+                "address": "31-39 Elizabeth Street",
+                "area": "Melbourne (CBD)",
+                "name": "The Joint Bar",
+                "x": 144.9643,
+                "y": -37.8174,
+                "hospital": "Jolimont Endoscopy Centre",
+                "police": ["Melbourne East", "Melbourne West", "Melbourne West Precinct Policing", "Southbank", "Transit Safety Division"],
+                "pharma": 36
+            },
+            {
+                "address": "233-237 Lonsdale Street",
+                "area": "Melbourne (CBD)",
+                "name": "The Emerald Peacock",
+                "x": 144.9655,
+                "y": -37.8116,
+                "hospital": "Victoria Parade Surgery Centre",
+                "police": ["Melbourne East", "Melbourne West", "Melbourne West Precinct Policing"],
+                "pharma": 44
+            },
+            {
+                "address": "150-162 Flinders Street",
+                "area": "Melbourne (CBD)",
+                "name": "Forum Theatre Bar",
+                "x": 144.9694,
+                "y": -37.8165,
+                "hospital": "Jolimont Endoscopy Centre",
+                "police": ["Melbourne East", "Southbank"],
+                "pharma": 31
+            },
+            {
+                "address": "207-361 Flinders Street",
+                "area": "Melbourne (CBD)",
+                "name": "Clocks At Flinders Street Station",
+                "x": 144.9655,
+                "y": -37.8187,
+                "hospital": "Jolimont Endoscopy Centre",
+                "police": ["Melbourne East", "Melbourne West", "Melbourne West Precinct Policing", "Southbank", "Transit Safety Division"],
+                "pharma": 28
+            },
+            {
+                "address": "7-9 Waratah Place",
+                "area": "Melbourne (CBD)",
+                "name": "Manchuria",
+                "x": 144.967,
+                "y": -37.8116,
+                "hospital": "Victoria Parade Surgery Centre",
+                "police": ["Fitzroy", "Melbourne East", "Melbourne West", "Melbourne West Precinct Policing"],
+                "pharma": 40
+            },
+            {
+                "address": "55-57 Elizabeth Street",
+                "area": "Melbourne (CBD)",
+                "name": "Fiftyfive",
+                "x": 144.9641,
+                "y": -37.817,
+                "hospital": "Jolimont Endoscopy Centre",
+                "police": ["Melbourne East", "Melbourne West", "Melbourne West Precinct Policing", "Southbank", "Transit Safety Division"],
+                "pharma": 38
+            },
+            {
+                "address": "206-218 Bourke Street",
+                "area": "Melbourne (CBD)",
+                "name": "Xiang Club",
+                "x": 144.9669,
+                "y": -37.8126,
+                "hospital": "Victoria Parade Surgery Centre",
+                "police": ["Melbourne East", "Melbourne West", "Melbourne West Precinct Policing"],
+                "pharma": 43
+            },
+            {
+                "address": "377-391 Cardigan Street",
+                "area": "Carlton",
+                "name": "Clyde Hotel",
+                "x": 144.9658,
+                "y": -37.7973,
+                "hospital": "Melbourne Private Hospital",
+                "police": ["Fitzroy", "Melbourne North"],
+                "pharma": 5
+            },
+            {
+                "address": "380-388 Russell Street",
+                "area": "Melbourne (CBD)",
+                "name": "Blue Moon Bar",
+                "x": 144.9661,
+                "y": -37.8075,
+                "hospital": "Victoria Parade Surgery Centre",
+                "police": ["Fitzroy", "Melbourne East", "Melbourne North", "Melbourne West", "Melbourne West Precinct Policing"],
+                "pharma": 21
+            },
+            {
+                "address": "324-328 Little Lonsdale Street",
+                "area": "Melbourne (CBD)",
+                "name": "Alchemist's Refuge",
+                "x": 144.9599,
+                "y": -37.8117,
+                "hospital": "Victoria Parade Surgery Centre",
+                "police": ["Melbourne East", "Melbourne North", "Melbourne West", "Melbourne West Precinct Policing", "Transit Safety Division"],
+                "pharma": 39
+            },
+            {
+                "address": "395-397 Little Lonsdale Street",
+                "area": "Melbourne (CBD)",
+                "name": "Horse Bazaar",
+                "x": 144.9602,
+                "y": -37.8119,
+                "hospital": "Victoria Parade Surgery Centre",
+                "police": ["Melbourne East", "Melbourne North", "Melbourne West", "Melbourne West Precinct Policing", "Transit Safety Division"],
+                "pharma": 41
+            },
+            {
+                "address": "206-218 Bourke Street",
+                "area": "Melbourne (CBD)",
+                "name": "Rainbow Karaoke",
+                "x": 144.9669,
+                "y": -37.8126,
+                "hospital": "Victoria Parade Surgery Centre",
+                "police": ["Melbourne East", "Melbourne West", "Melbourne West Precinct Policing"],
+                "pharma": 43
+            },
+            {
+                "address": "206-218 Bourke Street",
+                "area": "Melbourne (CBD)",
+                "name": "VS Sports Bar",
+                "x": 144.9669,
+                "y": -37.8126,
+                "hospital": "Victoria Parade Surgery Centre",
+                "police": ["Melbourne East", "Melbourne West", "Melbourne West Precinct Policing"],
+                "pharma": 43
+            },
+            {
+                "address": "2 Swanston Street",
+                "area": "Melbourne (CBD)",
+                "name": "Zinc at Federation Square",
+                "x": 144.9699,
+                "y": -37.8178,
+                "hospital": "Jolimont Endoscopy Centre",
+                "police": ["Melbourne East", "Southbank"],
+                "pharma": 23
+            },
+            {
+                "address": "187 Flinders Lane",
+                "area": "Melbourne (CBD)",
+                "name": "The Adelphi Hotel",
+                "x": 144.9684,
+                "y": -37.8164,
+                "hospital": "Jolimont Endoscopy Centre",
+                "police": ["Melbourne East", "Southbank", "Transit Safety Division"],
+                "pharma": 35
+            },
+            {
+                "address": "67-73 Hardware Lane",
+                "area": "Melbourne (CBD)",
+                "name": "The Mill",
+                "x": 144.9609,
+                "y": -37.8132,
+                "hospital": "Victoria Parade Surgery Centre",
+                "police": ["Melbourne East", "Melbourne West", "Melbourne West Precinct Policing", "Transit Safety Division"],
+                "pharma": 43
+            },
+            {
+                "address": "213-217 Russell Street",
+                "area": "Melbourne (CBD)",
+                "name": "Escape City",
+                "x": 144.9672,
+                "y": -37.8116,
+                "hospital": "Victoria Parade Surgery Centre",
+                "police": ["Fitzroy", "Melbourne East", "Melbourne West", "Melbourne West Precinct Policing"],
+                "pharma": 40
+            },
+            {
+                "address": "281-287 Swanston Street",
+                "area": "Melbourne (CBD)",
+                "name": "Bornga",
+                "x": 144.9644,
+                "y": -37.8114,
+                "hospital": "Victoria Parade Surgery Centre",
+                "police": ["Melbourne East", "Melbourne North", "Melbourne West", "Melbourne West Precinct Policing"],
+                "pharma": 42
+            },
+            {
+                "address": "281-287 Swanston Street",
+                "area": "Melbourne (CBD)",
+                "name": "Mui Karaoke",
+                "x": 144.9644,
+                "y": -37.8114,
+                "hospital": "Victoria Parade Surgery Centre",
+                "police": ["Melbourne East", "Melbourne North", "Melbourne West", "Melbourne West Precinct Policing"],
+                "pharma": 42
+            },
+            {
+                "address": "13 Heffernan Lane",
+                "area": "Melbourne (CBD)",
+                "name": "Union Electric",
+                "x": 144.9666,
+                "y": -37.8118,
+                "hospital": "Victoria Parade Surgery Centre",
+                "police": ["Melbourne East", "Melbourne West", "Melbourne West Precinct Policing"],
+                "pharma": 40
+            },
+            {
+                "address": "331-335 Lygon Street",
+                "area": "Carlton",
+                "name": "Wolfs Lair",
+                "x": 144.9672,
+                "y": -37.7975,
+                "hospital": "Melbourne Private Hospital",
+                "police": ["Fitzroy", "Melbourne North"],
+                "pharma": 5
+            },
+            {
+                "address": "391-393 Little Lonsdale Street",
+                "area": "Melbourne (CBD)",
+                "name": "La La Land",
+                "x": 144.9603,
+                "y": -37.8119,
+                "hospital": "Victoria Parade Surgery Centre",
+                "police": ["Melbourne East", "Melbourne North", "Melbourne West", "Melbourne West Precinct Policing", "Transit Safety Division"],
+                "pharma": 41
+            },
+            {
+                "address": "267 Little Collins Street",
+                "area": "Melbourne (CBD)",
+                "name": "Polepole Bar",
+                "x": 144.9656,
+                "y": -37.8148,
+                "hospital": "Victoria Parade Surgery Centre",
+                "police": ["Melbourne East", "Melbourne West", "Melbourne West Precinct Policing", "Southbank", "Transit Safety Division"],
+                "pharma": 44
+            },
+            {
+                "address": "252-254 Flinders Lane",
+                "area": "Melbourne (CBD)",
+                "name": "Hell's Kitchen",
+                "x": 144.9656,
+                "y": -37.8166,
+                "hospital": "Jolimont Endoscopy Centre",
+                "police": ["Melbourne East", "Melbourne West", "Melbourne West Precinct Policing", "Southbank", "Transit Safety Division"],
+                "pharma": 45
+            },
+            {
+                "address": "341-347 Flinders Lane",
+                "area": "Melbourne (CBD)",
+                "name": "Bull And Bear Tavern",
+                "x": 144.963,
+                "y": -37.8178,
+                "hospital": "Jolimont Endoscopy Centre",
+                "police": ["Melbourne East", "Melbourne West", "Melbourne West Precinct Policing", "Southbank", "Transit Safety Division"],
+                "pharma": 38
+            },
+            {
+                "address": "317-323 Flinders Lane",
+                "area": "Melbourne (CBD)",
+                "name": "Sebel Melbourne - Flinders Lane",
+                "x": 144.9637,
+                "y": -37.8177,
+                "hospital": "Jolimont Endoscopy Centre",
+                "police": ["Melbourne East", "Melbourne West", "Melbourne West Precinct Policing", "Southbank", "Transit Safety Division"],
+                "pharma": 38
+            },
+            {
+                "address": "106-112 Hardware Street",
+                "area": "Melbourne (CBD)",
+                "name": "Nieuw Amsterdam",
+                "x": 144.9607,
+                "y": -37.8121,
+                "hospital": "Victoria Parade Surgery Centre",
+                "police": ["Melbourne East", "Melbourne North", "Melbourne West", "Melbourne West Precinct Policing", "Transit Safety Division"],
+                "pharma": 42
+            },
+            {
+                "address": "293-299 La Trobe Street",
+                "area": "Melbourne (CBD)",
+                "name": "Burger Theory | The Hills Rooftop | The Tuxedo Cat",
+                "x": 144.9605,
+                "y": -37.8108,
+                "hospital": "Victoria Parade Surgery Centre",
+                "police": ["Melbourne East", "Melbourne North", "Melbourne West", "Melbourne West Precinct Policing", "Transit Safety Division"],
+                "pharma": 39
+            },
+            {
+                "address": "298 Lygon Street",
+                "area": "Carlton",
+                "name": "Carlton Yacht Club Bar",
+                "x": 144.9674,
+                "y": -37.8,
+                "hospital": "Melbourne Private Hospital",
+                "police": ["Fitzroy", "Melbourne North"],
+                "pharma": 5
+            },
+            {
+                "address": "270-276 Lygon Street",
+                "area": "Carlton",
+                "name": "University Hotel",
+                "x": 144.9672,
+                "y": -37.8005,
+                "hospital": "Melbourne Private Hospital",
+                "police": ["Fitzroy", "Melbourne North"],
+                "pharma": 5
+            },
+            {
+                "address": "414-422 Lygon Street",
+                "area": "Carlton",
+                "name": "Astor Hotel",
+                "x": 144.9678,
+                "y": -37.7969,
+                "hospital": "Melbourne Private Hospital",
+                "police": ["Fitzroy", "Melbourne North"],
+                "pharma": 5
+            },
+            {
+                "address": "162-168 Collins Street",
+                "area": "Melbourne (CBD)",
+                "name": "The Long Room",
+                "x": 144.9678,
+                "y": -37.8145,
+                "hospital": "Victoria Parade Surgery Centre",
+                "police": ["Melbourne East", "Melbourne West", "Melbourne West Precinct Policing"],
+                "pharma": 41
+            },
+            {
+                "address": "16-20 Corrs Lane",
+                "area": "Melbourne (CBD)",
+                "name": "Euro House | Pulp Club",
+                "x": 144.9684,
+                "y": -37.8111,
+                "hospital": "Victoria Parade Surgery Centre",
+                "police": ["Fitzroy", "Melbourne East"],
+                "pharma": 37
+            },
+            {
+                "address": "16-20 Corrs Lane",
+                "area": "Melbourne (CBD)",
+                "name": "House of Maximon | Berlin Bar",
+                "x": 144.9684,
+                "y": -37.8111,
+                "hospital": "Victoria Parade Surgery Centre",
+                "police": ["Fitzroy", "Melbourne East"],
+                "pharma": 37
+            },
+            {
+                "address": "100 Little Lonsdale Street",
+                "area": "Melbourne (CBD)",
+                "name": "Gami Chicken and Beer",
+                "x": 144.9687,
+                "y": -37.8091,
+                "hospital": "Victoria Parade Surgery Centre",
+                "police": ["Fitzroy", "Melbourne East"],
+                "pharma": 26
+            },
+            {
+                "address": "401-405 Swanston Street",
+                "area": "Melbourne (CBD)",
+                "name": "Red Love Bar Musicroom",
+                "x": 144.9632,
+                "y": -37.809,
+                "hospital": "Victoria Parade Surgery Centre",
+                "police": ["Melbourne East", "Melbourne North", "Melbourne West", "Melbourne West Precinct Policing"],
+                "pharma": 36
+            },
+            {
+                "address": "196-212 Little Collins Street",
+                "area": "Melbourne (CBD)",
+                "name": "Hairy Canary",
+                "x": 144.9672,
+                "y": -37.8138,
+                "hospital": "Victoria Parade Surgery Centre",
+                "police": ["Melbourne East", "Melbourne West", "Melbourne West Precinct Policing"],
+                "pharma": 43
+            },
+            {
+                "address": "115-127 Russell Street",
+                "area": "Melbourne (CBD)",
+                "name": "Portland Hotel",
+                "x": 144.9682,
+                "y": -37.8137,
+                "hospital": "Victoria Parade Surgery Centre",
+                "police": ["Melbourne East", "Melbourne West", "Melbourne West Precinct Policing"],
+                "pharma": 39
+            },
+            {
+                "address": "21 Liverpool Street",
+                "area": "Melbourne (CBD)",
+                "name": "Double Happiness Bar | New Gold Mountain",
+                "x": 144.9713,
+                "y": -37.8112,
+                "hospital": "Victoria Parade Surgery Centre",
+                "police": ["Fitzroy", "Melbourne East"],
+                "pharma": 28
+            },
+            {
+                "address": "2-8 Queen Street",
+                "area": "Melbourne (CBD)",
+                "name": "Candela Nuevo",
+                "x": 144.9627,
+                "y": -37.8186,
+                "hospital": "Jolimont Endoscopy Centre",
+                "police": ["Melbourne East", "Melbourne West", "Melbourne West Precinct Policing", "Southbank", "Transit Safety Division"],
+                "pharma": 32
+            },
+            {
+                "address": "187 Flinders Lane",
+                "area": "Melbourne (CBD)",
+                "name": "Mon Bijou",
+                "x": 144.9684,
+                "y": -37.8164,
+                "hospital": "Jolimont Endoscopy Centre",
+                "police": ["Melbourne East", "Southbank", "Transit Safety Division"],
+                "pharma": 35
+            },
+            {
+                "address": "209-211 Lonsdale Street",
+                "area": "Melbourne (CBD)",
+                "name": "Boilermaker House",
+                "x": 144.9663,
+                "y": -37.8114,
+                "hospital": "Victoria Parade Surgery Centre",
+                "police": ["Melbourne East", "Melbourne West", "Melbourne West Precinct Policing"],
+                "pharma": 42
+            },
+            {
+                "address": "199-203 Russell Street",
+                "area": "Melbourne (CBD)",
+                "name": "Exford Hotel",
+                "x": 144.9673,
+                "y": -37.8118,
+                "hospital": "Victoria Parade Surgery Centre",
+                "police": ["Fitzroy", "Melbourne East", "Melbourne West", "Melbourne West Precinct Policing"],
+                "pharma": 40
+            },
+            {
+                "address": "125-133 Swanston Street",
+                "area": "Melbourne (CBD)",
+                "name": "Max Watt's",
+                "x": 144.9658,
+                "y": -37.8147,
+                "hospital": "Victoria Parade Surgery Centre",
+                "police": ["Melbourne East", "Melbourne West", "Melbourne West Precinct Policing", "Southbank", "Transit Safety Division"],
+                "pharma": 45
+            },
+            {
+                "address": "188-194 Little Collins Street",
+                "area": "Melbourne (CBD)",
+                "name": "Gin Palace",
+                "x": 144.9676,
+                "y": -37.8139,
+                "hospital": "Victoria Parade Surgery Centre",
+                "police": ["Melbourne East", "Melbourne West", "Melbourne West Precinct Policing"],
+                "pharma": 41
+            },
+            {
+                "address": "19-25 Little Bourke Street",
+                "area": "Melbourne (CBD)",
+                "name": "Mrs Parma's ",
+                "x": 144.972,
+                "y": -37.8107,
+                "hospital": "Victoria Parade Surgery Centre",
+                "police": ["Fitzroy", "Melbourne East"],
+                "pharma": 24
+            },
+            {
+                "address": "300 Russell Street",
+                "area": "Melbourne (CBD)",
+                "name": "Jankara Karaoke",
+                "x": 144.9669,
+                "y": -37.8095,
+                "hospital": "Victoria Parade Surgery Centre",
+                "police": ["Fitzroy", "Melbourne East", "Melbourne North", "Melbourne West", "Melbourne West Precinct Policing"],
+                "pharma": 33
+            },
+            {
+                "address": "2-8 Bourke Street",
+                "area": "Melbourne (CBD)",
+                "name": "Imperial Hotel",
+                "x": 144.9727,
+                "y": -37.8112,
+                "hospital": "Victoria Parade Surgery Centre",
+                "police": ["Fitzroy", "Melbourne East"],
+                "pharma": 23
+            },
+            {
+                "address": "377-381 Lonsdale Street",
+                "area": "Melbourne (CBD)",
+                "name": "Trapt Bar & Escape Rooms",
+                "x": 144.9615,
+                "y": -37.8129,
+                "hospital": "Victoria Parade Surgery Centre",
+                "police": ["Melbourne East", "Melbourne West", "Melbourne West Precinct Policing", "Transit Safety Division"],
+                "pharma": 42
+            },
+            {
+                "address": "91-95 Cardigan Street",
+                "area": "Carlton",
+                "name": "Hotel Lincoln",
+                "x": 144.9645,
+                "y": -37.8045,
+                "hospital": "Melbourne Private Hospital",
+                "police": ["Fitzroy", "Melbourne East", "Melbourne North"],
+                "pharma": 6
+            },
+            {
+                "address": "267 Little Collins Street",
+                "area": "Melbourne (CBD)",
+                "name": "Bar Americano",
+                "x": 144.9656,
+                "y": -37.8148,
+                "hospital": "Victoria Parade Surgery Centre",
+                "police": ["Melbourne East", "Melbourne West", "Melbourne West Precinct Policing", "Southbank", "Transit Safety Division"],
+                "pharma": 44
+            },
+            {
+                "address": "49 Rathdowne Street",
+                "area": "Carlton",
+                "name": "Epocha Restaurant",
+                "x": 144.9686,
+                "y": -37.8058,
+                "hospital": "St Vincent's Hospital",
+                "police": ["Fitzroy", "Melbourne East", "Melbourne North"],
+                "pharma": 7
+            },
+            {
+                "address": "131-141 Russell Street",
+                "area": "Melbourne (CBD)",
+                "name": "QT Melbourne",
+                "x": 144.9678,
+                "y": -37.8134,
+                "hospital": "Victoria Parade Surgery Centre",
+                "police": ["Melbourne East", "Melbourne West", "Melbourne West Precinct Policing"],
+                "pharma": 40
+            },
+            {
+                "address": "79-85 Bourke Street",
+                "area": "Melbourne (CBD)",
+                "name": "Good Heavens",
+                "x": 144.971,
+                "y": -37.8122,
+                "hospital": "Victoria Parade Surgery Centre",
+                "police": ["Fitzroy", "Melbourne East"],
+                "pharma": 32
+            },
+            {
+                "address": "184-186 Bourke Street",
+                "area": "Melbourne (CBD)",
+                "name": "Stars KTV and Lounge",
+                "x": 144.9677,
+                "y": -37.8127,
+                "hospital": "Victoria Parade Surgery Centre",
+                "police": ["Melbourne East", "Melbourne West", "Melbourne West Precinct Policing"],
+                "pharma": 40
+            },
+            {
+                "address": "94-96 Bourke Street",
+                "area": "Melbourne (CBD)",
+                "name": "The Elephant and Wheelbarrow",
+                "x": 144.9702,
+                "y": -37.8119,
+                "hospital": "Victoria Parade Surgery Centre",
+                "police": ["Fitzroy", "Melbourne East"],
+                "pharma": 35
+            },
+            {
+                "address": "107-109 Flinders Lane",
+                "area": "Melbourne (CBD)",
+                "name": "Jack & Bones",
+                "x": 144.9708,
+                "y": -37.8156,
+                "hospital": "Jolimont Endoscopy Centre",
+                "police": ["Melbourne East"],
+                "pharma": 26
+            },
+            {
+                "address": "413-417 Elizabeth Street",
+                "area": "Melbourne (CBD)",
+                "name": "Workshop",
+                "x": 144.9605,
+                "y": -37.8092,
+                "hospital": "Melbourne Private Hospital",
+                "police": ["Melbourne East", "Melbourne North", "Melbourne West", "Melbourne West Precinct Policing"],
+                "pharma": 31
+            },
+            {
+                "address": "86-88 Collins Street",
+                "area": "Melbourne (CBD)",
+                "name": "Ra",
+                "x": 144.9706,
+                "y": -37.8139,
+                "hospital": "Victoria Parade Surgery Centre",
+                "police": ["Melbourne East"],
+                "pharma": 35
+            },
+            {
+                "address": "167-175 Franklin Street",
+                "area": "Melbourne (CBD)",
+                "name": "Disco Bar",
+                "x": 144.9592,
+                "y": -37.809,
+                "hospital": "Melbourne Private Hospital",
+                "police": ["Melbourne East", "Melbourne North", "Melbourne West", "Melbourne West Precinct Policing"],
+                "pharma": 25
+            },
+            {
+                "address": "121-131 Collins Street",
+                "area": "Melbourne (CBD)",
+                "name": "Spice Market",
+                "x": 144.9698,
+                "y": -37.8152,
+                "hospital": "Jolimont Endoscopy Centre",
+                "police": ["Melbourne East"],
+                "pharma": 33
+            },
+            {
+                "address": "25-31 Spring Street",
+                "area": "Melbourne (CBD)",
+                "name": "HiHou",
+                "x": 144.9741,
+                "y": -37.8145,
+                "hospital": "Jolimont Endoscopy Centre",
+                "police": ["Fitzroy", "Melbourne East"],
+                "pharma": 17
+            },
+            {
+                "address": "121-123 Flinders Lane",
+                "area": "Melbourne (CBD)",
+                "name": "Sake Restaurant and Bar",
+                "x": 144.9705,
+                "y": -37.8157,
+                "hospital": "Jolimont Endoscopy Centre",
+                "police": ["Melbourne East"],
+                "pharma": 29
+            },
+            {
+                "address": "95-101 Flinders Lane",
+                "area": "Melbourne (CBD)",
+                "name": "Garden State Hotel",
+                "x": 144.9711,
+                "y": -37.8155,
+                "hospital": "Jolimont Endoscopy Centre",
+                "police": ["Melbourne East"],
+                "pharma": 25
+            },
+            {
+                "address": "146-150 Bourke Street",
+                "area": "Melbourne (CBD)",
+                "name": "FM Karaoke Bar",
+                "x": 144.9687,
+                "y": -37.8124,
+                "hospital": "Victoria Parade Surgery Centre",
+                "police": ["Fitzroy", "Melbourne East"],
+                "pharma": 36
+            },
+            {
+                "address": "113 Lonsdale Street",
+                "area": "Melbourne (CBD)",
+                "name": "Seamstress",
+                "x": 144.969,
+                "y": -37.8106,
+                "hospital": "Victoria Parade Surgery Centre",
+                "police": ["Fitzroy", "Melbourne East"],
+                "pharma": 34
+            },
+            {
+                "address": "22-26 Corrs Lane",
+                "area": "Melbourne (CBD)",
+                "name": "Gr8 Bar",
+                "x": 144.9683,
+                "y": -37.811,
+                "hospital": "Victoria Parade Surgery Centre",
+                "police": ["Fitzroy", "Melbourne East"],
+                "pharma": 38
+            },
+            {
+                "address": "33-39 Little Lonsdale Street",
+                "area": "Melbourne (CBD)",
+                "name": "The Fringe",
+                "x": 144.9707,
+                "y": -37.8092,
+                "hospital": "Victoria Parade Surgery Centre",
+                "police": ["Fitzroy", "Melbourne East"],
+                "pharma": 25
+            },
+            {
+                "address": "11-37 Exhibition Street",
+                "area": "Melbourne (CBD)",
+                "name": "The Fair Trader Cafe",
+                "x": 144.9717,
+                "y": -37.8155,
+                "hospital": "Jolimont Endoscopy Centre",
+                "police": ["Melbourne East"],
+                "pharma": 25
+            },
+            {
+                "address": "133-135 Flinders Lane",
+                "area": "Melbourne (CBD)",
+                "name": "Meatball & Wine Bar",
+                "x": 144.9702,
+                "y": -37.8157,
+                "hospital": "Jolimont Endoscopy Centre",
+                "police": ["Melbourne East", "Southbank"],
+                "pharma": 31
+            },
+            {
+                "address": "27-31 Lygon Street",
+                "area": "Carlton",
+                "name": "The Curtin",
+                "x": 144.9657,
+                "y": -37.8062,
+                "hospital": "St Vincent's Hospital",
+                "police": ["Fitzroy", "Melbourne East", "Melbourne North"],
+                "pharma": 11
+            },
+            {
+                "address": "54-62 Bourke Street",
+                "area": "Melbourne (CBD)",
+                "name": "Romeo Lane",
+                "x": 144.9714,
+                "y": -37.8116,
+                "hospital": "Victoria Parade Surgery Centre",
+                "police": ["Fitzroy", "Melbourne East"],
+                "pharma": 29
+            },
+            {
+                "address": "118-122 Bourke Street",
+                "area": "Melbourne (CBD)",
+                "name": "Fireflies Club",
+                "x": 144.9695,
+                "y": -37.8121,
+                "hospital": "Victoria Parade Surgery Centre",
+                "police": ["Fitzroy", "Melbourne East"],
+                "pharma": 39
+            },
+            {
+                "address": "121-131 Collins Street",
+                "area": "Melbourne (CBD)",
+                "name": "RU-CO",
+                "x": 144.9698,
+                "y": -37.8152,
+                "hospital": "Jolimont Endoscopy Centre",
+                "police": ["Melbourne East"],
+                "pharma": 33
+            },
+            {
+                "address": "270 Russell Street",
+                "area": "Melbourne (CBD)",
+                "name": "Whisky and Alement",
+                "x": 144.9672,
+                "y": -37.8101,
+                "hospital": "Victoria Parade Surgery Centre",
+                "police": ["Fitzroy", "Melbourne East", "Melbourne West", "Melbourne West Precinct Policing"],
+                "pharma": 37
+            },
+            {
+                "address": "21-25 Croft Alley",
+                "area": "Melbourne (CBD)",
+                "name": "The Croft Institute",
+                "x": 144.9691,
+                "y": -37.8121,
+                "hospital": "Victoria Parade Surgery Centre",
+                "police": ["Fitzroy", "Melbourne East"],
+                "pharma": 36
+            },
+            {
+                "address": "84-94 Flinders Street",
+                "area": "Melbourne (CBD)",
+                "name": "Eau-De-Vie ",
+                "x": 144.9717,
+                "y": -37.8159,
+                "hospital": "Jolimont Endoscopy Centre",
+                "police": ["Melbourne East"],
+                "pharma": 24
+            },
+            {
+                "address": "124-128 Bourke Street",
+                "area": "Melbourne (CBD)",
+                "name": "Welcome Stranger",
+                "x": 144.9693,
+                "y": -37.8121,
+                "hospital": "Victoria Parade Surgery Centre",
+                "police": ["Fitzroy", "Melbourne East"],
+                "pharma": 36
+            },
+            {
+                "address": "152-158 Bourke Street",
+                "area": "Melbourne (CBD)",
+                "name": "Charltons Entertainment Complex | Roxanne Bar",
+                "x": 144.9685,
+                "y": -37.8121,
+                "hospital": "Victoria Parade Surgery Centre",
+                "police": ["Fitzroy", "Melbourne East"],
+                "pharma": 37
+            },
+            {
+                "address": "226-236 Russell Street",
+                "area": "Melbourne (CBD)",
+                "name": "Heartbreaker",
+                "x": 144.9676,
+                "y": -37.811,
+                "hospital": "Victoria Parade Surgery Centre",
+                "police": ["Fitzroy", "Melbourne East", "Melbourne West", "Melbourne West Precinct Policing"],
+                "pharma": 38
+            },
+            {
+                "address": "39-43 Bourke Street",
+                "area": "Melbourne (CBD)",
+                "name": "Spleen Central",
+                "x": 144.972,
+                "y": -37.8119,
+                "hospital": "Victoria Parade Surgery Centre",
+                "police": ["Fitzroy", "Melbourne East"],
+                "pharma": 25
+            },
+            {
+                "address": "19-23 Meyers Place",
+                "area": "Melbourne (CBD)",
+                "name": "Loop Project Space & Bar",
+                "x": 144.9721,
+                "y": -37.8122,
+                "hospital": "Victoria Parade Surgery Centre",
+                "police": ["Fitzroy", "Melbourne East"],
+                "pharma": 26
+            },
+            {
+                "address": "242-284 Exhibition Street",
+                "area": "Melbourne (CBD)",
+                "name": "Coopers Inn",
+                "x": 144.97,
+                "y": -37.8094,
+                "hospital": "Victoria Parade Surgery Centre",
+                "police": ["Fitzroy", "Melbourne East"],
+                "pharma": 30
+            },
+            {
+                "address": "114-122 Exhibition Street",
+                "area": "Melbourne (CBD)",
+                "name": "European Bier Cafe",
+                "x": 144.9712,
+                "y": -37.8129,
+                "hospital": "Victoria Parade Surgery Centre",
+                "police": ["Fitzroy", "Melbourne East"],
+                "pharma": 33
+            },
+            {
+                "address": "62-66 Little Collins Street",
+                "area": "Melbourne (CBD)",
+                "name": "Magic Mountain Saloon",
+                "x": 144.9714,
+                "y": -37.8128,
+                "hospital": "Victoria Parade Surgery Centre",
+                "police": ["Fitzroy", "Melbourne East"],
+                "pharma": 31
+            },
+            {
+                "address": "59-63 Bourke Street",
+                "area": "Melbourne (CBD)",
+                "name": "Club Asuka",
+                "x": 144.9716,
+                "y": -37.8121,
+                "hospital": "Victoria Parade Surgery Centre",
+                "police": ["Fitzroy", "Melbourne East"],
+                "pharma": 29
+            },
+            {
+                "address": "18-24 Market Lane",
+                "area": "Melbourne (CBD)",
+                "name": "Ding Dong Lounge",
+                "x": 144.9694,
+                "y": -37.8118,
+                "hospital": "Victoria Parade Surgery Centre",
+                "police": ["Fitzroy", "Melbourne East"],
+                "pharma": 39
+            },
+            {
+                "address": "12-14 Corrs Lane",
+                "area": "Melbourne (CBD)",
+                "name": "Fad Gallery",
+                "x": 144.9684,
+                "y": -37.8112,
+                "hospital": "Victoria Parade Surgery Centre",
+                "police": ["Fitzroy", "Melbourne East"],
+                "pharma": 37
+            },
+            {
+                "address": "124 La Trobe Street",
+                "area": "Melbourne (CBD)",
+                "name": "Pearson and Murph'y Cafe",
+                "x": 144.9646,
+                "y": -37.8082,
+                "hospital": "Victoria Parade Surgery Centre",
+                "police": ["Fitzroy", "Melbourne East", "Melbourne North", "Melbourne West", "Melbourne West Precinct Policing"],
+                "pharma": 28
+            },
+            {
+                "address": "106 Little Lonsdale Street",
+                "area": "Melbourne (CBD)",
+                "name": "Troika Bar ",
+                "x": 144.9686,
+                "y": -37.8092,
+                "hospital": "Victoria Parade Surgery Centre",
+                "police": ["Fitzroy", "Melbourne East"],
+                "pharma": 26
+            },
+            {
+                "address": "103-105 Lonsdale Street",
+                "area": "Melbourne (CBD)",
+                "name": "Bomba Tapas Bar and Rooftop",
+                "x": 144.9693,
+                "y": -37.8105,
+                "hospital": "Victoria Parade Surgery Centre",
+                "police": ["Fitzroy", "Melbourne East"],
+                "pharma": 31
+            },
+            {
+                "address": "161 Spring Street",
+                "area": "Melbourne (CBD)",
+                "name": "The European",
+                "x": 144.9724,
+                "y": -37.811,
+                "hospital": "Victoria Parade Surgery Centre",
+                "police": ["Fitzroy", "Melbourne East"],
+                "pharma": 24
+            },
+            {
+                "address": "86-88 Collins Street",
+                "area": "Melbourne (CBD)",
+                "name": "Collins Quarter ",
+                "x": 144.9706,
+                "y": -37.8139,
+                "hospital": "Victoria Parade Surgery Centre",
+                "police": ["Melbourne East"],
+                "pharma": 35
+            },
+            {
+                "address": "34-38 Franklin Street",
+                "area": "Melbourne (CBD)",
+                "name": "Captain Melville ",
+                "x": 144.9616,
+                "y": -37.8075,
+                "hospital": "Melbourne Private Hospital",
+                "police": ["Melbourne East", "Melbourne North", "Melbourne West", "Melbourne West Precinct Policing"],
+                "pharma": 18
+            },
+            {
+                "address": "69-73 Collins Street",
+                "area": "Melbourne (CBD)",
+                "name": "Harley House",
+                "x": 144.9713,
+                "y": -37.8143,
+                "hospital": "Jolimont Endoscopy Centre",
+                "police": ["Melbourne East"],
+                "pharma": 31
+            },
+            {
+                "address": "91-93 Flinders Lane",
+                "area": "Melbourne (CBD)",
+                "name": "Papa Goose | Mary Fortune Cocktail Bar",
+                "x": 144.9712,
+                "y": -37.8154,
+                "hospital": "Jolimont Endoscopy Centre",
+                "police": ["Melbourne East"],
+                "pharma": 27
+            },
+            {
+                "address": "192-202 Lygon Street",
+                "area": "Carlton",
+                "name": "Players On Lygon",
+                "x": 144.9671,
+                "y": -37.8025,
+                "hospital": "St Vincent's Hospital",
+                "police": ["Fitzroy", "Melbourne North"],
+                "pharma": 4
+            },
+            {
+                "address": "160-162 Lygon Street",
+                "area": "Carlton",
+                "name": "Vodka Temple",
+                "x": 144.9668,
+                "y": -37.8034,
+                "hospital": "St Vincent's Hospital",
+                "police": ["Fitzroy", "Melbourne East", "Melbourne North"],
+                "pharma": 4
+            },
+            {
+                "address": "67-73 Hardware Lane",
+                "area": "Melbourne (CBD)",
+                "name": "Charlie's Bar",
+                "x": 144.9609,
+                "y": -37.8132,
+                "hospital": "Victoria Parade Surgery Centre",
+                "police": ["Melbourne East", "Melbourne West", "Melbourne West Precinct Policing", "Transit Safety Division"],
+                "pharma": 43
+            },
+            {
+                "address": "335-339 Flinders Lane",
+                "area": "Melbourne (CBD)",
+                "name": "Bartronica",
+                "x": 144.9632,
+                "y": -37.8178,
+                "hospital": "Jolimont Endoscopy Centre",
+                "police": ["Melbourne East", "Melbourne West", "Melbourne West Precinct Policing", "Southbank", "Transit Safety Division"],
+                "pharma": 38
+            },
+            {
+                "address": "277-279 Flinders Lane",
+                "area": "Melbourne (CBD)",
+                "name": "The Mill House Bar",
+                "x": 144.9653,
+                "y": -37.8172,
+                "hospital": "Jolimont Endoscopy Centre",
+                "police": ["Melbourne East", "Melbourne West", "Melbourne West Precinct Policing", "Southbank", "Transit Safety Division"],
+                "pharma": 34
+            },
+            {
+                "address": "242-244 Little Bourke Street",
+                "area": "Melbourne (CBD)",
+                "name": "Shanghai Club",
+                "x": 144.9656,
+                "y": -37.8121,
+                "hospital": "Victoria Parade Surgery Centre",
+                "police": ["Melbourne East", "Melbourne West", "Melbourne West Precinct Policing"],
+                "pharma": 44
+            },
+            {
+                "address": "146 Swanston Street",
+                "area": "Melbourne (CBD)",
+                "name": "Cabinet Bar ",
+                "x": 144.9662,
+                "y": -37.8142,
+                "hospital": "Victoria Parade Surgery Centre",
+                "police": ["Melbourne East", "Melbourne West", "Melbourne West Precinct Policing", "Southbank", "Transit Safety Division"],
+                "pharma": 44
+            },
+            {
+                "address": "338-352 Bourke Street",
+                "area": "Melbourne (CBD)",
+                "name": "Alto Events",
+                "x": 144.9633,
+                "y": -37.8136,
+                "hospital": "Victoria Parade Surgery Centre",
+                "police": ["Melbourne East", "Melbourne West", "Melbourne West Precinct Policing", "Southbank", "Transit Safety Division"],
+                "pharma": 46
+            },
+            {
+                "address": "256 Collins Street",
+                "area": "Melbourne (CBD)",
+                "name": "The Butterfly Club",
+                "x": 144.9653,
+                "y": -37.8155,
+                "hospital": "Victoria Parade Surgery Centre",
+                "police": ["Melbourne East", "Melbourne West", "Melbourne West Precinct Policing", "Southbank", "Transit Safety Division"],
+                "pharma": 45
+            },
+            {
+                "address": "27-29 Tattersalls Lane",
+                "area": "Melbourne (CBD)",
+                "name": "Section 8 Bar",
+                "x": 144.9654,
+                "y": -37.8118,
+                "hospital": "Victoria Parade Surgery Centre",
+                "police": ["Melbourne East", "Melbourne West", "Melbourne West Precinct Policing"],
+                "pharma": 44
+            },
+            {
+                "address": "248-258 Swanston Street",
+                "area": "Melbourne (CBD)",
+                "name": "The Toff In Town",
+                "x": 144.9653,
+                "y": -37.812,
+                "hospital": "Victoria Parade Surgery Centre",
+                "police": ["Melbourne East", "Melbourne West", "Melbourne West Precinct Policing"],
+                "pharma": 44
+            },
+            {
+                "address": "248-258 Swanston Street",
+                "area": "Melbourne (CBD)",
+                "name": "Rooftop Cinema & Bar",
+                "x": 144.9653,
+                "y": -37.812,
+                "hospital": "Victoria Parade Surgery Centre",
+                "police": ["Melbourne East", "Melbourne West", "Melbourne West Precinct Policing"],
+                "pharma": 44
+            },
+            {
+                "address": "318-322 Little Bourke Street",
+                "area": "Melbourne (CBD)",
+                "name": "Penny Blue",
+                "x": 144.9631,
+                "y": -37.8129,
+                "hospital": "Victoria Parade Surgery Centre",
+                "police": ["Melbourne East", "Melbourne West", "Melbourne West Precinct Policing", "Transit Safety Division"],
+                "pharma": 47
+            },
+            {
+                "address": "239 Lonsdale Street",
+                "area": "Melbourne (CBD)",
+                "name": "Ferdydurke",
+                "x": 144.9654,
+                "y": -37.8116,
+                "hospital": "Victoria Parade Surgery Centre",
+                "police": ["Melbourne East", "Melbourne West", "Melbourne West Precinct Policing"],
+                "pharma": 43
+            },
+            {
+                "address": "15-19 Warburton Lane",
+                "area": "Melbourne (CBD)",
+                "name": "Murmur",
+                "x": 144.9618,
+                "y": -37.8138,
+                "hospital": "Victoria Parade Surgery Centre",
+                "police": ["Melbourne East", "Melbourne West", "Melbourne West Precinct Policing", "Southbank", "Transit Safety Division"],
+                "pharma": 45
+            },
+            {
+                "address": "22 Drewery Place",
+                "area": "Melbourne (CBD)",
+                "name": "Sister Bellas",
+                "x": 144.9638,
+                "y": -37.8113,
+                "hospital": "Victoria Parade Surgery Centre",
+                "police": ["Melbourne East", "Melbourne North", "Melbourne West", "Melbourne West Precinct Policing", "Transit Safety Division"],
+                "pharma": 42
+            },
+            {
+                "address": "2 Swanston Street",
+                "area": "Melbourne (CBD)",
+                "name": "Transport Hotel",
+                "x": 144.9699,
+                "y": -37.8178,
+                "hospital": "Jolimont Endoscopy Centre",
+                "police": ["Melbourne East", "Southbank"],
+                "pharma": 23
+            },
+            {
+                "address": "2 Swanston Street",
+                "area": "Melbourne (CBD)",
+                "name": "Transit Rooftop Bar",
+                "x": 144.9699,
+                "y": -37.8178,
+                "hospital": "Jolimont Endoscopy Centre",
+                "police": ["Melbourne East", "Southbank"],
+                "pharma": 23
+            },
+            {
+                "address": "248-258 Swanston Street",
+                "area": "Melbourne (CBD)",
+                "name": "Cookie",
+                "x": 144.9653,
+                "y": -37.812,
+                "hospital": "Victoria Parade Surgery Centre",
+                "police": ["Melbourne East", "Melbourne West", "Melbourne West Precinct Policing"],
+                "pharma": 44
+            },
+            {
+                "address": "318-322 Little Collins Street",
+                "area": "Melbourne (CBD)",
+                "name": "New Guernica",
+                "x": 144.964,
+                "y": -37.8149,
+                "hospital": "Victoria Parade Surgery Centre",
+                "police": ["Melbourne East", "Melbourne West", "Melbourne West Precinct Policing", "Southbank", "Transit Safety Division"],
+                "pharma": 48
+            },
+            {
+                "address": "1-5 Elizabeth Street",
+                "area": "Melbourne (CBD)",
+                "name": "Dreams Gentlemen's Club",
+                "x": 144.9646,
+                "y": -37.8181,
+                "hospital": "Jolimont Endoscopy Centre",
+                "police": ["Melbourne East", "Melbourne West", "Melbourne West Precinct Policing", "Southbank", "Transit Safety Division"],
+                "pharma": 35
+            },
+            {
+                "address": "244-250 Queen Street",
+                "area": "Melbourne (CBD)",
+                "name": "Bar 420",
+                "x": 144.96,
+                "y": -37.8127,
+                "hospital": "Victoria Parade Surgery Centre",
+                "police": ["Melbourne East", "Melbourne North", "Melbourne West", "Melbourne West Precinct Policing", "Transit Safety Division"],
+                "pharma": 43
+            },
+            {
+                "address": "301-303 Swanston Street",
+                "area": "Melbourne (CBD)",
+                "name": "Sahara Restaurant",
+                "x": 144.9642,
+                "y": -37.8111,
+                "hospital": "Victoria Parade Surgery Centre",
+                "police": ["Melbourne East", "Melbourne North", "Melbourne West", "Melbourne West Precinct Policing"],
+                "pharma": 41
+            },
+            {
+                "address": "2-20 Drewery Place",
+                "area": "Melbourne (CBD)",
+                "name": "Baroq House",
+                "x": 144.964,
+                "y": -37.8113,
+                "hospital": "Victoria Parade Surgery Centre",
+                "police": ["Melbourne East", "Melbourne North", "Melbourne West", "Melbourne West Precinct Policing"],
+                "pharma": 42
+            },
+            {
+                "address": "280-292 Collins Street",
+                "area": "Melbourne (CBD)",
+                "name": "The Charles Dickens Tavern",
+                "x": 144.9646,
+                "y": -37.8157,
+                "hospital": "Victoria Parade Surgery Centre",
+                "police": ["Melbourne East", "Melbourne West", "Melbourne West Precinct Policing", "Southbank", "Transit Safety Division"],
+                "pharma": 46
+            },
+            {
+                "address": "16-26 Bond Street",
+                "area": "Melbourne (CBD)",
+                "name": "Bond Melbourne",
+                "x": 144.9631,
+                "y": -37.8181,
+                "hospital": "Jolimont Endoscopy Centre",
+                "police": ["Melbourne East", "Melbourne West", "Melbourne West Precinct Policing", "Southbank", "Transit Safety Division"],
+                "pharma": 37
+            },
+            {
+                "address": "16-30 Russell Place",
+                "area": "Melbourne (CBD)",
+                "name": "Bar Ampere",
+                "x": 144.9674,
+                "y": -37.8136,
+                "hospital": "Victoria Parade Surgery Centre",
+                "police": ["Melbourne East", "Melbourne West", "Melbourne West Precinct Policing"],
+                "pharma": 42
+            },
+            {
+                "address": "221 Little Lonsdale Street",
+                "area": "Melbourne (CBD)",
+                "name": "Father's Office",
+                "x": 144.9657,
+                "y": -37.8107,
+                "hospital": "Victoria Parade Surgery Centre",
+                "police": ["Melbourne East", "Melbourne North", "Melbourne West", "Melbourne West Precinct Policing"],
+                "pharma": 42
+            },
+            {
+                "address": "183-265 La Trobe Street",
+                "area": "Melbourne (CBD)",
+                "name": "Equinox Bar Restaurant",
+                "x": 144.963,
+                "y": -37.8107,
+                "hospital": "Victoria Parade Surgery Centre",
+                "police": ["Melbourne East", "Melbourne North", "Melbourne West", "Melbourne West Precinct Policing"],
+                "pharma": 42
+            },
+            {
+                "address": "183-265 La Trobe Street",
+                "area": "Melbourne (CBD)",
+                "name": "Partyworld",
+                "x": 144.963,
+                "y": -37.8107,
+                "hospital": "Victoria Parade Surgery Centre",
+                "police": ["Melbourne East", "Melbourne North", "Melbourne West", "Melbourne West Precinct Policing"],
+                "pharma": 42
+            },
+            {
+                "address": "183-265 La Trobe Street",
+                "area": "Melbourne (CBD)",
+                "name": "Melbourne Central Lion Hotel",
+                "x": 144.963,
+                "y": -37.8107,
+                "hospital": "Victoria Parade Surgery Centre",
+                "police": ["Melbourne East", "Melbourne North", "Melbourne West", "Melbourne West Precinct Policing"],
+                "pharma": 42
+            },
+            {
+                "address": "183-265 La Trobe Street",
+                "area": "Melbourne (CBD)",
+                "name": "Strike Melbourne Central",
+                "x": 144.963,
+                "y": -37.8107,
+                "hospital": "Victoria Parade Surgery Centre",
+                "police": ["Melbourne East", "Melbourne North", "Melbourne West", "Melbourne West Precinct Policing"],
+                "pharma": 42
+            },
+            {
+                "address": "183-265 La Trobe Street",
+                "area": "Melbourne (CBD)",
+                "name": "Hush Bar @ Melbourne Central",
+                "x": 144.963,
+                "y": -37.8107,
+                "hospital": "Victoria Parade Surgery Centre",
+                "police": ["Melbourne East", "Melbourne North", "Melbourne West", "Melbourne West Precinct Policing"],
+                "pharma": 42
+            },
+            {
+                "address": "183-265 La Trobe Street",
+                "area": "Melbourne (CBD)",
+                "name": "Hoyts",
+                "x": 144.963,
+                "y": -37.8107,
+                "hospital": "Victoria Parade Surgery Centre",
+                "police": ["Melbourne East", "Melbourne North", "Melbourne West", "Melbourne West Precinct Policing"],
+                "pharma": 42
+            },
+            {
+                "address": "221 Little Lonsdale Street",
+                "area": "Melbourne (CBD)",
+                "name": "Idarts Hive",
+                "x": 144.9657,
+                "y": -37.8107,
+                "hospital": "Victoria Parade Surgery Centre",
+                "police": ["Melbourne East", "Melbourne North", "Melbourne West", "Melbourne West Precinct Policing"],
+                "pharma": 42
+            },
+            {
+                "address": "264-266 Swanston Street",
+                "area": "Melbourne (CBD)",
+                "name": "Goldilocks",
+                "x": 144.9651,
+                "y": -37.8118,
+                "hospital": "Victoria Parade Surgery Centre",
+                "police": ["Melbourne East", "Melbourne West", "Melbourne West Precinct Policing"],
+                "pharma": 42
+            },
+            {
+                "address": "2 Swanston Street",
+                "area": "Melbourne (CBD)",
+                "name": "Beer De Luxe",
+                "x": 144.9699,
+                "y": -37.8178,
+                "hospital": "Jolimont Endoscopy Centre",
+                "police": ["Melbourne East", "Southbank"],
+                "pharma": 23
+            },
+            {
+                "address": "314-336 Bourke Street",
+                "area": "Melbourne (CBD)",
+                "name": "Mural Hall",
+                "x": 144.9638,
+                "y": -37.8134,
+                "hospital": "Victoria Parade Surgery Centre",
+                "police": ["Melbourne East", "Melbourne West", "Melbourne West Precinct Policing", "Transit Safety Division"],
+                "pharma": 46
+            },
+            {
+                "address": "248-258 Swanston Street",
+                "area": "Melbourne (CBD)",
+                "name": "Mesa Verde",
+                "x": 144.9653,
+                "y": -37.812,
+                "hospital": "Victoria Parade Surgery Centre",
+                "police": ["Melbourne East", "Melbourne West", "Melbourne West Precinct Policing"],
+                "pharma": 44
+            },
+            {
+                "address": "193-199 Bourke Street",
+                "area": "Melbourne (CBD)",
+                "name": "The Carlton Hotel",
+                "x": 144.9676,
+                "y": -37.8132,
+                "hospital": "Victoria Parade Surgery Centre",
+                "police": ["Melbourne East", "Melbourne West", "Melbourne West Precinct Policing"],
+                "pharma": 40
+            },
+            {
+                "address": "1-7 Swanston Street",
+                "area": "Melbourne (CBD)",
+                "name": "Young & Jacksons",
+                "x": 144.967,
+                "y": -37.8174,
+                "hospital": "Jolimont Endoscopy Centre",
+                "police": ["Melbourne East", "Melbourne West", "Melbourne West Precinct Policing", "Southbank", "Transit Safety Division"],
+                "pharma": 35
+            },
+            {
+                "address": "243-249 Swanston Street",
+                "area": "Melbourne (CBD)",
+                "name": "The Lounge",
+                "x": 144.9647,
+                "y": -37.8123,
+                "hospital": "Victoria Parade Surgery Centre",
+                "police": ["Melbourne East", "Melbourne West", "Melbourne West Precinct Policing", "Transit Safety Division"],
+                "pharma": 42
+            },
+            {
+                "address": "14-20 Goldie Place",
+                "area": "Melbourne (CBD)",
+                "name": "Word",
+                "x": 144.9607,
+                "y": -37.8133,
+                "hospital": "Victoria Parade Surgery Centre",
+                "police": ["Melbourne East", "Melbourne West", "Melbourne West Precinct Policing", "Transit Safety Division"],
+                "pharma": 43
+            },
+            {
+                "address": "221 Little Lonsdale Street",
+                "area": "Melbourne (CBD)",
+                "name": "Strike Bowling",
+                "x": 144.9657,
+                "y": -37.8107,
+                "hospital": "Victoria Parade Surgery Centre",
+                "police": ["Melbourne East", "Melbourne North", "Melbourne West", "Melbourne West Precinct Policing"],
+                "pharma": 42
+            },
+            {
+                "address": "191-205 Swanston Street",
+                "area": "Melbourne (CBD)",
+                "name": "Cocoon Bar",
+                "x": 144.965,
+                "y": -37.8131,
+                "hospital": "Victoria Parade Surgery Centre",
+                "police": ["Melbourne East", "Melbourne West", "Melbourne West Precinct Policing", "Transit Safety Division"],
+                "pharma": 46
+            },
+            {
+                "address": "191-205 Swanston Street",
+                "area": "Melbourne (CBD)",
+                "name": "Black Opal",
+                "x": 144.965,
+                "y": -37.8131,
+                "hospital": "Victoria Parade Surgery Centre",
+                "police": ["Melbourne East", "Melbourne West", "Melbourne West Precinct Policing", "Transit Safety Division"],
+                "pharma": 46
+            },
+            {
+                "address": "54-60 Market Street",
+                "area": "Melbourne (CBD)",
+                "name": "Oak & Vine Bar",
+                "x": 144.9608,
+                "y": -37.8178,
+                "hospital": "Jolimont Endoscopy Centre",
+                "police": ["Melbourne East", "Melbourne West", "Melbourne West Precinct Policing", "Southbank", "Transit Safety Division"],
+                "pharma": 34
+            },
+            {
+                "address": "428-432 Little Bourke Street",
+                "area": "Melbourne (CBD)",
+                "name": "DANSK Restaurant",
+                "x": 144.9597,
+                "y": -37.8139,
+                "hospital": "Victoria Parade Surgery Centre",
+                "police": ["Melbourne East", "Melbourne West", "Melbourne West Precinct Policing", "Southbank", "Transit Safety Division"],
+                "pharma": 42
+            },
+            {
+                "address": "14-20 King Street",
+                "area": "Melbourne (CBD)",
+                "name": "Spearmint Rhino Gentlemen's Club",
+                "x": 144.9577,
+                "y": -37.8198,
+                "hospital": "Specialist Surgicentre Docklands",
+                "police": ["Melbourne East", "Melbourne West", "Melbourne West Precinct Policing", "Southbank", "Transit Safety Division"],
+                "pharma": 19
+            },
+            {
+                "address": "422-428 Little Collins Street",
+                "area": "Melbourne (CBD)",
+                "name": "Little Red Pocket",
+                "x": 144.9603,
+                "y": -37.8159,
+                "hospital": "Victoria Parade Surgery Centre",
+                "police": ["Melbourne East", "Melbourne West", "Melbourne West Precinct Policing", "Southbank", "Transit Safety Division"],
+                "pharma": 42
+            },
+            {
+                "address": "111-129 Queen Street",
+                "area": "Melbourne (CBD)",
+                "name": "Karstens At CQ ",
+                "x": 144.9606,
+                "y": -37.8158,
+                "hospital": "Victoria Parade Surgery Centre",
+                "police": ["Melbourne East", "Melbourne West", "Melbourne West Precinct Policing", "Southbank", "Transit Safety Division"],
+                "pharma": 43
+            },
+            {
+                "address": "111-129 Queen Street",
+                "area": "Melbourne (CBD)",
+                "name": "Blue Diamond",
+                "x": 144.9606,
+                "y": -37.8158,
+                "hospital": "Victoria Parade Surgery Centre",
+                "police": ["Melbourne East", "Melbourne West", "Melbourne West Precinct Policing", "Southbank", "Transit Safety Division"],
+                "pharma": 43
+            },
+            {
+                "address": "85-91 Queen Street",
+                "area": "Melbourne (CBD)",
+                "name": "Melbourne Black Rabbit",
+                "x": 144.961,
+                "y": -37.8165,
+                "hospital": "Victoria Parade Surgery Centre",
+                "police": ["Melbourne East", "Melbourne West", "Melbourne West Precinct Policing", "Southbank", "Transit Safety Division"],
+                "pharma": 43
+            },
+            {
+                "address": "11A Highlander Lane",
+                "area": "Melbourne (CBD)",
+                "name": "Highlander Bar",
+                "x": 144.958,
+                "y": -37.8197,
+                "hospital": "Specialist Surgicentre Docklands",
+                "police": ["Melbourne East", "Melbourne West", "Melbourne West Precinct Policing", "Southbank", "Transit Safety Division"],
+                "pharma": 18
+            },
+            {
+                "address": "111-129 Queen Street",
+                "area": "Melbourne (CBD)",
+                "name": "CQ Bar",
+                "x": 144.9606,
+                "y": -37.8158,
+                "hospital": "Victoria Parade Surgery Centre",
+                "police": ["Melbourne East", "Melbourne West", "Melbourne West Precinct Policing", "Southbank", "Transit Safety Division"],
+                "pharma": 43
+            },
+            {
+                "address": "14-20 King Street",
+                "area": "Melbourne (CBD)",
+                "name": "Tramp Bar",
+                "x": 144.9577,
+                "y": -37.8198,
+                "hospital": "Specialist Surgicentre Docklands",
+                "police": ["Melbourne East", "Melbourne West", "Melbourne West Precinct Policing", "Southbank", "Transit Safety Division"],
+                "pharma": 19
+            },
+            {
+                "address": "582-584 Little Collins Street",
+                "area": "Melbourne (CBD)",
+                "name": "Saint & Rogue",
+                "x": 144.9554,
+                "y": -37.8174,
+                "hospital": "Specialist Surgicentre Docklands",
+                "police": ["Melbourne East", "Melbourne West", "Melbourne West Precinct Policing", "Southbank", "Transit Safety Division"],
+                "pharma": 22
+            },
+            {
+                "address": "103-105 Queen Street",
+                "area": "Melbourne (CBD)",
+                "name": "Chaise Lounge",
+                "x": 144.9608,
+                "y": -37.8161,
+                "hospital": "Victoria Parade Surgery Centre",
+                "police": ["Melbourne East", "Melbourne West", "Melbourne West Precinct Policing", "Southbank", "Transit Safety Division"],
+                "pharma": 43
+            },
+            {
+                "address": "196-200 A'Beckett Street",
+                "area": "Melbourne (CBD)",
+                "name": "Nomads Industry Backpackers",
+                "x": 144.9574,
+                "y": -37.81,
+                "hospital": "Royal Melbourne Hospital",
+                "police": ["Melbourne East", "Melbourne North", "Melbourne West", "Melbourne West Precinct Policing", "Transit Safety Division"],
+                "pharma": 25
+            },
+            {
+                "address": "263-267 William Street",
+                "area": "Melbourne (CBD)",
+                "name": "Metropolitan Hotel",
+                "x": 144.9566,
+                "y": -37.8129,
+                "hospital": "Specialist Surgicentre Docklands",
+                "police": ["Melbourne East", "Melbourne North", "Melbourne West", "Melbourne West Precinct Policing", "Transit Safety Division"],
+                "pharma": 33
+            },
+            {
+                "address": "204-208 King Street",
+                "area": "Melbourne (CBD)",
+                "name": "Great Western Hotel",
+                "x": 144.9555,
+                "y": -37.8152,
+                "hospital": "Specialist Surgicentre Docklands",
+                "police": ["Melbourne East", "Melbourne West", "Melbourne West Precinct Policing", "Southbank", "Transit Safety Division"],
+                "pharma": 23
+            },
+            {
+                "address": "508-514 Flinders Street",
+                "area": "Melbourne (CBD)",
+                "name": "Waterside Hotel",
+                "x": 144.9572,
+                "y": -37.8202,
+                "hospital": "Specialist Surgicentre Docklands",
+                "police": ["Melbourne East", "Melbourne West", "Melbourne West Precinct Policing", "Southbank", "Transit Safety Division"],
+                "pharma": 14
+            },
+            {
+                "address": "131-141 Queen Street",
+                "area": "Melbourne (CBD)",
+                "name": "The Turf Bar & Restaurant",
+                "x": 144.9605,
+                "y": -37.8155,
+                "hospital": "Victoria Parade Surgery Centre",
+                "police": ["Melbourne East", "Melbourne West", "Melbourne West Precinct Policing", "Southbank", "Transit Safety Division"],
+                "pharma": 43
+            },
+            {
+                "address": "502-504 Flinders Street",
+                "area": "Melbourne (CBD)",
+                "name": "Insignia on Flinders",
+                "x": 144.9577,
+                "y": -37.8201,
+                "hospital": "Specialist Surgicentre Docklands",
+                "police": ["Melbourne East", "Melbourne West", "Melbourne West Precinct Policing", "Southbank", "Transit Safety Division"],
+                "pharma": 16
+            },
+            {
+                "address": "435-443 Little Collins Street",
+                "area": "Melbourne (CBD)",
+                "name": "Marrakech Bar",
+                "x": 144.9601,
+                "y": -37.8164,
+                "hospital": "Victoria Parade Surgery Centre",
+                "police": ["Melbourne East", "Melbourne West", "Melbourne West Precinct Policing", "Southbank", "Transit Safety Division"],
+                "pharma": 41
+            },
+            {
+                "address": "5-9 Bank Place",
+                "area": "Melbourne (CBD)",
+                "name": "Mitre Tavern",
+                "x": 144.9603,
+                "y": -37.8168,
+                "hospital": "Victoria Parade Surgery Centre",
+                "police": ["Melbourne East", "Melbourne West", "Melbourne West Precinct Policing", "Southbank", "Transit Safety Division"],
+                "pharma": 38
+            },
+            {
+                "address": "12-16 Bank Place",
+                "area": "Melbourne (CBD)",
+                "name": "Melbourne Savage Club",
+                "x": 144.9606,
+                "y": -37.8165,
+                "hospital": "Victoria Parade Surgery Centre",
+                "police": ["Melbourne East", "Melbourne West", "Melbourne West Precinct Policing", "Southbank", "Transit Safety Division"],
+                "pharma": 42
+            },
+            {
+                "address": "433 Little Collins Street",
+                "area": "Melbourne (CBD)",
+                "name": "Dikstein's Corner Bar",
+                "x": 144.9603,
+                "y": -37.8163,
+                "hospital": "Victoria Parade Surgery Centre",
+                "police": ["Melbourne East", "Melbourne West", "Melbourne West Precinct Policing", "Southbank", "Transit Safety Division"],
+                "pharma": 41
+            },
+            {
+                "address": "430-442 Collins Street",
+                "area": "Melbourne (CBD)",
+                "name": "The Mug House",
+                "x": 144.9598,
+                "y": -37.817,
+                "hospital": "Victoria Parade Surgery Centre",
+                "police": ["Melbourne East", "Melbourne West", "Melbourne West Precinct Policing", "Southbank", "Transit Safety Division"],
+                "pharma": 34
+            },
+            {
+                "address": "188-202 King Street",
+                "area": "Melbourne (CBD)",
+                "name": "La Di Da",
+                "x": 144.9556,
+                "y": -37.8155,
+                "hospital": "Specialist Surgicentre Docklands",
+                "police": ["Melbourne East", "Melbourne West", "Melbourne West Precinct Policing", "Southbank", "Transit Safety Division"],
+                "pharma": 23
+            },
+            {
+                "address": "415-417 Collins Street",
+                "area": "Melbourne (CBD)",
+                "name": "The Sherlock Holmes Inn",
+                "x": 144.9609,
+                "y": -37.8175,
+                "hospital": "Jolimont Endoscopy Centre",
+                "police": ["Melbourne East", "Melbourne West", "Melbourne West Precinct Policing", "Southbank", "Transit Safety Division"],
+                "pharma": 37
+            },
+            {
+                "address": "566-580 Flinders Street",
+                "area": "Melbourne (CBD)",
+                "name": "UBar",
+                "x": 144.9553,
+                "y": -37.8207,
+                "hospital": "Specialist Surgicentre Docklands",
+                "police": ["Melbourne East", "Melbourne West", "Melbourne West Precinct Policing", "Southbank", "Transit Safety Division"],
+                "pharma": 12
+            },
+            {
+                "address": "111-129 Queen Street",
+                "area": "Melbourne (CBD)",
+                "name": "CitiClub On Queen Hotel ",
+                "x": 144.9606,
+                "y": -37.8158,
+                "hospital": "Victoria Parade Surgery Centre",
+                "police": ["Melbourne East", "Melbourne West", "Melbourne West Precinct Policing", "Southbank", "Transit Safety Division"],
+                "pharma": 43
+            },
+            {
+                "address": "561-585 Flinders Lane",
+                "area": "Melbourne (CBD)",
+                "name": "Holiday Inn On Flinders Melbourne",
+                "x": 144.9552,
+                "y": -37.8202,
+                "hospital": "Specialist Surgicentre Docklands",
+                "police": ["Melbourne East", "Melbourne West", "Melbourne West Precinct Policing", "Southbank", "Transit Safety Division"],
+                "pharma": 15
+            },
+            {
+                "address": "98-110 William Street",
+                "area": "Melbourne (CBD)",
+                "name": "The Australian Club",
+                "x": 144.9591,
+                "y": -37.8167,
+                "hospital": "Specialist Surgicentre Docklands",
+                "police": ["Melbourne East", "Melbourne West", "Melbourne West Precinct Policing", "Southbank", "Transit Safety Division"],
+                "pharma": 34
+            },
+            {
+                "address": "425-427 Little Collins Street",
+                "area": "Melbourne (CBD)",
+                "name": "The Irish Times",
+                "x": 144.9605,
+                "y": -37.8163,
+                "hospital": "Victoria Parade Surgery Centre",
+                "police": ["Melbourne East", "Melbourne West", "Melbourne West Precinct Policing", "Southbank", "Transit Safety Division"],
+                "pharma": 42
+            },
+            {
+                "address": "170-176 William Street",
+                "area": "Melbourne (CBD)",
+                "name": "Cafe Lavita On William ",
+                "x": 144.9582,
+                "y": -37.8149,
+                "hospital": "Specialist Surgicentre Docklands",
+                "police": ["Melbourne East", "Melbourne West", "Melbourne West Precinct Policing", "Southbank", "Transit Safety Division"],
+                "pharma": 39
+            },
+            {
+                "address": "672-696 Bourke Street",
+                "area": "Melbourne (CBD)",
+                "name": "Mail Exchange Hotel",
+                "x": 144.9536,
+                "y": -37.8166,
+                "hospital": "Specialist Surgicentre Docklands",
+                "police": ["Melbourne East", "Melbourne West", "Melbourne West Precinct Policing", "Southbank", "Transit Safety Division"],
+                "pharma": 21
+            },
+            {
+                "address": "419-429 Collins Street",
+                "area": "Melbourne (CBD)",
+                "name": "Ms Collins",
+                "x": 144.9607,
+                "y": -37.8175,
+                "hospital": "Jolimont Endoscopy Centre",
+                "police": ["Melbourne East", "Melbourne West", "Melbourne West Precinct Policing", "Southbank", "Transit Safety Division"],
+                "pharma": 36
+            },
+            {
+                "address": "211-213 Franklin Street",
+                "area": "Melbourne (CBD)",
+                "name": "Island Somewhere",
+                "x": 144.9578,
+                "y": -37.8097,
+                "hospital": "Royal Melbourne Hospital",
+                "police": ["Melbourne East", "Melbourne North", "Melbourne West", "Melbourne West Precinct Policing", "Transit Safety Division"],
+                "pharma": 25
+            },
+            {
+                "address": "120-138 King Street",
+                "area": "Melbourne (CBD)",
+                "name": "El Coco",
+                "x": 144.9564,
+                "y": -37.817,
+                "hospital": "Specialist Surgicentre Docklands",
+                "police": ["Melbourne East", "Melbourne West", "Melbourne West Precinct Policing", "Southbank", "Transit Safety Division"],
+                "pharma": 27
+            },
+            {
+                "address": "26-32 King Street",
+                "area": "Melbourne (CBD)",
+                "name": "Clique Bar",
+                "x": 144.9575,
+                "y": -37.8195,
+                "hospital": "Specialist Surgicentre Docklands",
+                "police": ["Melbourne East", "Melbourne West", "Melbourne West Precinct Policing", "Southbank", "Transit Safety Division"],
+                "pharma": 17
+            },
+            {
+                "address": "483-501 Bourke Street",
+                "area": "Melbourne (CBD)",
+                "name": "RACV City Club",
+                "x": 144.9596,
+                "y": -37.8159,
+                "hospital": "Victoria Parade Surgery Centre",
+                "police": ["Melbourne East", "Melbourne West", "Melbourne West Precinct Policing", "Southbank", "Transit Safety Division"],
+                "pharma": 42
+            },
+            {
+                "address": "277-287 King Street",
+                "area": "Melbourne (CBD)",
+                "name": "Hotel Sophia",
+                "x": 144.9542,
+                "y": -37.8137,
+                "hospital": "Specialist Surgicentre Docklands",
+                "police": ["Melbourne East", "Melbourne North", "Melbourne West", "Melbourne West Precinct Policing", "Transit Safety Division"],
+                "pharma": 18
+            },
+            {
+                "address": "203-207 King Street",
+                "area": "Melbourne (CBD)",
+                "name": "Bar Humbug",
+                "x": 144.955,
+                "y": -37.8154,
+                "hospital": "Specialist Surgicentre Docklands",
+                "police": ["Melbourne East", "Melbourne West", "Melbourne West Precinct Policing", "Southbank", "Transit Safety Division"],
+                "pharma": 22
+            },
+            {
+                "address": "597-603 Lonsdale Street",
+                "area": "Melbourne (CBD)",
+                "name": "The Men's Gallery",
+                "x": 144.9545,
+                "y": -37.8149,
+                "hospital": "Specialist Surgicentre Docklands",
+                "police": ["Melbourne East", "Melbourne West", "Melbourne West Precinct Policing", "Southbank", "Transit Safety Division"],
+                "pharma": 20
+            },
+            {
+                "address": "607-623 Collins Street",
+                "area": "Melbourne (CBD)",
+                "name": "Batman's Hill On Collins Hotel",
+                "x": 144.9547,
+                "y": -37.8193,
+                "hospital": "Specialist Surgicentre Docklands",
+                "police": ["Melbourne East", "Melbourne West", "Melbourne West Precinct Policing", "Southbank", "Transit Safety Division"],
+                "pharma": 16
+            },
+            {
+                "address": "23-37 Star Crescent",
+                "area": "Docklands",
+                "name": "Harbour Town Hotel",
+                "x": 144.9378,
+                "y": -37.8132,
+                "hospital": "Specialist Surgicentre Docklands",
+                "police": ["Melbourne West", "Melbourne West Precinct Policing"],
+                "pharma": 3
+            },
+            {
+                "address": "85-161 Spencer Street",
+                "area": "Docklands",
+                "name": "Network Public Bar & Pizzeria",
+                "x": 144.9523,
+                "y": -37.8182,
+                "hospital": "Specialist Surgicentre Docklands",
+                "police": ["Melbourne East", "Melbourne West", "Melbourne West Precinct Policing", "Southbank", "Transit Safety Division"],
+                "pharma": 13
+            },
+            {
+                "address": "717-731 Collins Street",
+                "area": "Docklands",
+                "name": "Bar Nicional",
+                "x": 144.9501,
+                "y": -37.8207,
+                "hospital": "Specialist Surgicentre Docklands",
+                "police": ["Melbourne West", "Melbourne West Precinct Policing", "Southbank", "Transit Safety Division"],
+                "pharma": 9
+            },
+            {
+                "address": "122-148 Harbour Esplanade",
+                "area": "Docklands",
+                "name": "Legends Bar",
+                "x": 144.9476,
+                "y": -37.8166,
+                "hospital": "Specialist Surgicentre Docklands",
+                "police": ["Melbourne West", "Melbourne West Precinct Policing", "Transit Safety Division"],
+                "pharma": 8
+            },
+            {
+                "address": "1-5 Spencer Street",
+                "area": "Docklands",
+                "name": "Crown Plaza",
+                "x": 144.955,
+                "y": -37.8227,
+                "hospital": "Specialist Surgicentre Docklands",
+                "police": ["Melbourne East", "Melbourne West", "Melbourne West Precinct Policing", "South Melbourne", "Southbank", "Transit Safety Division"],
+                "pharma": 9
+            },
+            {
+                "address": "122-148 Harbour Esplanade",
+                "area": "Docklands",
+                "name": "The Medallion Club",
+                "x": 144.9476,
+                "y": -37.8166,
+                "hospital": "Specialist Surgicentre Docklands",
+                "police": ["Melbourne West", "Melbourne West Precinct Policing", "Transit Safety Division"],
+                "pharma": 8
+            },
+            {
+                "address": "122-148 Harbour Esplanade",
+                "area": "Docklands",
+                "name": "Locker Room Club Bar",
+                "x": 144.9476,
+                "y": -37.8166,
+                "hospital": "Specialist Surgicentre Docklands",
+                "police": ["Melbourne West", "Melbourne West Precinct Policing", "Transit Safety Division"],
+                "pharma": 8
+            },
+            {
+                "address": "99-127 Pearl River Road",
+                "area": "Docklands",
+                "name": "Igloo Cafe & St Moritz Bar",
+                "x": 144.9356,
+                "y": -37.8122,
+                "hospital": "Specialist Surgicentre Docklands",
+                "police": ["Melbourne West", "Melbourne West Precinct Policing"],
+                "pharma": 3
+            },
+            {
+                "address": "143-175 Harbour Esplanade",
+                "area": "Docklands",
+                "name": "Alumbra",
+                "x": 144.9436,
+                "y": -37.8165,
+                "hospital": "Specialist Surgicentre Docklands",
+                "police": ["Melbourne West", "Melbourne West Precinct Policing", "Transit Safety Division"],
+                "pharma": 6
+            },
+            {
+                "address": "425-427 Docklands Drive",
+                "area": "Docklands",
+                "name": "Waterfront Venues",
+                "x": 144.939,
+                "y": -37.8152,
+                "hospital": "Specialist Surgicentre Docklands",
+                "police": ["Melbourne West", "Melbourne West Precinct Policing", "Transit Safety Division"],
+                "pharma": 3
+            },
+            {
+                "address": "122-148 Harbour Esplanade",
+                "area": "Docklands",
+                "name": "E J Whitten Bar ",
+                "x": 144.9476,
+                "y": -37.8166,
+                "hospital": "Specialist Surgicentre Docklands",
+                "police": ["Melbourne West", "Melbourne West Precinct Policing", "Transit Safety Division"],
+                "pharma": 8
+            },
+            {
+                "address": "122-148 Harbour Esplanade",
+                "area": "Docklands",
+                "name": "Captains Bar ",
+                "x": 144.9476,
+                "y": -37.8166,
+                "hospital": "Specialist Surgicentre Docklands",
+                "police": ["Melbourne West", "Melbourne West Precinct Policing", "Transit Safety Division"],
+                "pharma": 8
+            },
+            {
+                "address": "747-757 Bourke Street",
+                "area": "Docklands",
+                "name": "The Nixon Hotel",
+                "x": 144.948,
+                "y": -37.8193,
+                "hospital": "Specialist Surgicentre Docklands",
+                "police": ["Melbourne West", "Melbourne West Precinct Policing", "Southbank", "Transit Safety Division"],
+                "pharma": 9
+            },
+            {
+                "address": "24-42 Newquay Promenade",
+                "area": "Docklands",
+                "name": "Vacant",
+                "x": 144.9421,
+                "y": -37.8143,
+                "hospital": "Specialist Surgicentre Docklands",
+                "police": ["Melbourne West", "Melbourne West Precinct Policing", "Transit Safety Division"],
+                "pharma": 4
+            },
+            {
+                "address": "120 Brunton Avenue",
+                "area": "East Melbourne",
+                "name": "Spotless Services",
+                "x": 144.9833,
+                "y": -37.8199,
+                "hospital": "East Melbourne Day Procedure Centre",
+                "police": ["Richmond"],
+                "pharma": 2
+            },
+            {
+                "address": "166 Albert Street",
+                "area": "East Melbourne",
+                "name": "Cohen Cellars Wine Bar",
+                "x": 144.9856,
+                "y": -37.81,
+                "hospital": "Epworth Freemasons",
+                "police": ["Collingwood", "Fitzroy", "Richmond"],
+                "pharma": 10
+            },
+            {
+                "address": "265-271 Racecourse Road",
+                "area": "Kensington",
+                "name": "The Quiet Man Irishman  Pub",
+                "x": 144.9324,
+                "y": -37.7886,
+                "hospital": "Royal Children's Hospital",
+                "police": ["Flemington"],
+                "pharma": 1
+            },
+            {
+                "address": "25-27 Rankins Road",
+                "area": "Kensington",
+                "name": "Flemington & Kensington RSL Club",
+                "x": 144.9322,
+                "y": -37.7893,
+                "hospital": "Royal Children's Hospital",
+                "police": ["Flemington"],
+                "pharma": 3
+            },
+            {
+                "address": "38-44 Barrett Street",
+                "area": "Kensington",
+                "name": "Henry St Brewhouse",
+                "x": 144.9343,
+                "y": -37.7981,
+                "hospital": "Royal Children's Hospital",
+                "police": ["Flemington"],
+                "pharma": 3
+            },
+            {
+                "address": "56-58 Courtney Street",
+                "area": "North Melbourne",
+                "name": "The Castle Hotel",
+                "x": 144.953,
+                "y": -37.8009,
+                "hospital": "Frances Perry House",
+                "police": ["Melbourne North", "Melbourne West", "Melbourne West Precinct Policing"],
+                "pharma": 13
+            },
+            {
+                "address": "7 Errol Street",
+                "area": "North Melbourne",
+                "name": "Joe Taylor",
+                "x": 144.949,
+                "y": -37.8048,
+                "hospital": "Frances Perry House",
+                "police": ["Melbourne North", "Melbourne West", "Melbourne West Precinct Policing"],
+                "pharma": 6
+            },
+            {
+                "address": "33 Errol Street",
+                "area": "North Melbourne",
+                "name": "Townhall Hotel North Melbourne",
+                "x": 144.9489,
+                "y": -37.8041,
+                "hospital": "Frances Perry House",
+                "police": ["Melbourne North", "Melbourne West", "Melbourne West Precinct Policing"],
+                "pharma": 7
+            },
+            {
+                "address": "1-3 Flemington Road",
+                "area": "North Melbourne",
+                "name": "Turf Club Hotel ",
+                "x": 144.9564,
+                "y": -37.8013,
+                "hospital": "Royal Melbourne Hospital",
+                "police": ["Melbourne North", "Melbourne West", "Melbourne West Precinct Policing"],
+                "pharma": 14
+            },
+            {
+                "address": "46-50 Leveson Street",
+                "area": "North Melbourne",
+                "name": "The Leveson",
+                "x": 144.9515,
+                "y": -37.8037,
+                "hospital": "Royal Women's Hospital, The",
+                "police": ["Melbourne North", "Melbourne West", "Melbourne West Precinct Policing"],
+                "pharma": 14
+            },
+            {
+                "address": "351-359 Queensberry Street",
+                "area": "North Melbourne",
+                "name": "Bobbie Peels",
+                "x": 144.956,
+                "y": -37.804,
+                "hospital": "Royal Melbourne Hospital",
+                "police": ["Melbourne North", "Melbourne West", "Melbourne West Precinct Policing"],
+                "pharma": 13
+            },
+            {
+                "address": "312-316 Victoria Street",
+                "area": "North Melbourne",
+                "name": "Victoria Hotel",
+                "x": 144.9557,
+                "y": -37.8056,
+                "hospital": "Royal Melbourne Hospital",
+                "police": ["Melbourne North", "Melbourne West", "Melbourne West Precinct Policing"],
+                "pharma": 11
+            },
+            {
+                "address": "240-248 Victoria Street",
+                "area": "North Melbourne",
+                "name": "Central Club Hotel",
+                "x": 144.9581,
+                "y": -37.8059,
+                "hospital": "Royal Melbourne Hospital",
+                "police": ["Melbourne East", "Melbourne North", "Melbourne West", "Melbourne West Precinct Policing"],
+                "pharma": 13
+            },
+            {
+                "address": "232-238 Victoria Street",
+                "area": "North Melbourne",
+                "name": "The Public Bar",
+                "x": 144.9586,
+                "y": -37.8059,
+                "hospital": "Melbourne Private Hospital",
+                "police": ["Melbourne East", "Melbourne North", "Melbourne West", "Melbourne West Precinct Policing"],
+                "pharma": 12
+            },
+            {
+                "address": "42 Courtney Street",
+                "area": "North Melbourne",
+                "name": "Metropolitan Hotel",
+                "x": 144.954,
+                "y": -37.8014,
+                "hospital": "Royal Women's Hospital, The",
+                "police": ["Melbourne North", "Melbourne West", "Melbourne West Precinct Policing"],
+                "pharma": 12
+            },
+            {
+                "address": "161-163 Errol Street",
+                "area": "North Melbourne",
+                "name": "Limerick Castle Hotel & Restaurant",
+                "x": 144.9496,
+                "y": -37.8011,
+                "hospital": "Frances Perry House",
+                "police": ["Melbourne North", "Melbourne West", "Melbourne West Precinct Policing"],
+                "pharma": 11
+            },
+            {
+                "address": "86-90 Errol Street",
+                "area": "North Melbourne",
+                "name": "The Courthouse Hotel",
+                "x": 144.95,
+                "y": -37.8029,
+                "hospital": "Frances Perry House",
+                "police": ["Melbourne North", "Melbourne West", "Melbourne West Precinct Policing"],
+                "pharma": 11
+            },
+            {
+                "address": "5-17 Flemington Road",
+                "area": "North Melbourne",
+                "name": "RMIT Village Melbourne",
+                "x": 144.9559,
+                "y": -37.8014,
+                "hospital": "Royal Melbourne Hospital",
+                "police": ["Melbourne North", "Melbourne West", "Melbourne West Precinct Policing"],
+                "pharma": 14
+            },
+            {
+                "address": "171-173 Curzon Street",
+                "area": "North Melbourne",
+                "name": "Albion Hotel",
+                "x": 144.9486,
+                "y": -37.7989,
+                "hospital": "Royal Children's Hospital",
+                "police": ["Melbourne North"],
+                "pharma": 12
+            },
+            {
+                "address": "230 Grattan Street",
+                "area": "Parkville",
+                "name": "University House Club",
+                "x": 144.9612,
+                "y": -37.7974,
+                "hospital": "Melbourne Private Hospital",
+                "police": ["Melbourne North"],
+                "pharma": 12
+            },
+            {
+                "address": "230 Grattan Street",
+                "area": "Parkville",
+                "name": "HJC Bar",
+                "x": 144.9612,
+                "y": -37.7974,
+                "hospital": "Melbourne Private Hospital",
+                "police": ["Melbourne North"],
+                "pharma": 12
+            },
+            {
+                "address": "419-443 Royal Parade",
+                "area": "Parkville",
+                "name": "Vibe Hotel",
+                "x": 144.9588,
+                "y": -37.7829,
+                "hospital": "Royal Melbourne Hospital (Royal Park Campus)",
+                "police": {},
+                "pharma": 0
+            },
+            {
+                "address": "65-73 Haig Street",
+                "area": "Southbank",
+                "name": "The Backlot Studios ",
+                "x": 144.9566,
+                "y": -37.8279,
+                "hospital": "Albert Road Clinic",
+                "police": ["South Melbourne", "Southbank", "Transit Safety Division"],
+                "pharma": 3
+            },
+            {
+                "address": "3 Southgate Avenue",
+                "area": "Southbank",
+                "name": "P J O'Briens Irish Pub & Side Bar",
+                "x": 144.9663,
+                "y": -37.8207,
+                "hospital": "Jolimont Endoscopy Centre",
+                "police": ["Melbourne East", "Southbank", "Transit Safety Division"],
+                "pharma": 13
+            },
+            {
+                "address": "20-30 Convention Centre Place",
+                "area": "Southbank",
+                "name": "Aerial Events",
+                "x": 144.9524,
+                "y": -37.8254,
+                "hospital": "Specialist Surgicentre Docklands",
+                "police": ["Melbourne West", "Melbourne West Precinct Policing", "South Melbourne", "Southbank", "Transit Safety Division"],
+                "pharma": 4
+            },
+            {
+                "address": "29-65 South Wharf Promenade",
+                "area": "Southbank",
+                "name": "Plus 5",
+                "x": 144.9503,
+                "y": -37.8241,
+                "hospital": "Specialist Surgicentre Docklands",
+                "police": ["Melbourne West", "Melbourne West Precinct Policing", "South Melbourne", "Southbank", "Transit Safety Division"],
+                "pharma": 6
+            },
+            {
+                "address": "29-65 South Wharf Promenade",
+                "area": "Southbank",
+                "name": "Munich Brau Haus",
+                "x": 144.9503,
+                "y": -37.8241,
+                "hospital": "Specialist Surgicentre Docklands",
+                "police": ["Melbourne West", "Melbourne West Precinct Policing", "South Melbourne", "Southbank", "Transit Safety Division"],
+                "pharma": 6
+            },
+            {
+                "address": "4 Riverside Quay",
+                "area": "Southbank",
+                "name": "Soho Restaurant & Bar",
+                "x": 144.9634,
+                "y": -37.8209,
+                "hospital": "Jolimont Endoscopy Centre",
+                "police": ["Melbourne East", "Melbourne West", "Melbourne West Precinct Policing", "Southbank", "Transit Safety Division"],
+                "pharma": 13
+            },
+            {
+                "address": "3-7 Riverside Quay",
+                "area": "Southbank",
+                "name": "Belgian Beer Cafe Melbourne",
+                "x": 144.9646,
+                "y": -37.8217,
+                "hospital": "Jolimont Endoscopy Centre",
+                "police": ["Melbourne East", "Melbourne West", "Melbourne West Precinct Policing", "Southbank", "Transit Safety Division"],
+                "pharma": 10
+            },
+            {
+                "address": "334-342 City Road",
+                "area": "Southbank",
+                "name": "Urban Central Accomodation | bar334",
+                "x": 144.9574,
+                "y": -37.8278,
+                "hospital": "Albert Road Clinic",
+                "police": ["Melbourne East", "South Melbourne", "Southbank", "Transit Safety Division"],
+                "pharma": 3
+            },
+            {
+                "address": "8 Whiteman Street",
+                "area": "Southbank",
+                "name": "Club 23",
+                "x": 144.9587,
+                "y": -37.8231,
+                "hospital": "Albert Road Clinic",
+                "police": ["Melbourne East", "Melbourne West", "Melbourne West Precinct Policing", "South Melbourne", "Southbank", "Transit Safety Division"],
+                "pharma": 7
+            },
+            {
+                "address": "100 St Kilda Road",
+                "area": "Southbank",
+                "name": "the Barre",
+                "x": 144.9682,
+                "y": -37.8209,
+                "hospital": "Jolimont Endoscopy Centre",
+                "police": ["Melbourne East", "Southbank", "Transit Safety Division"],
+                "pharma": 10
+            },
+            {
+                "address": "174-184 City Road",
+                "area": "Southbank",
+                "name": "Rumour Restaurant Bar & Lounge",
+                "x": 144.9619,
+                "y": -37.8238,
+                "hospital": "Albert Road Clinic",
+                "police": ["Melbourne East", "Melbourne West", "Melbourne West Precinct Policing", "South Melbourne", "Southbank", "Transit Safety Division"],
+                "pharma": 7
+            },
+            {
+                "address": "40-56 Queens Bridge Street",
+                "area": "Southbank",
+                "name": "Mesh|Tonic Bar",
+                "x": 144.9598,
+                "y": -37.8239,
+                "hospital": "Albert Road Clinic",
+                "police": ["Melbourne East", "Melbourne West", "Melbourne West Precinct Policing", "South Melbourne", "Southbank", "Transit Safety Division"],
+                "pharma": 7
+            },
+            {
+                "address": "8 Whiteman Street",
+                "area": "Southbank",
+                "name": "Co",
+                "x": 144.9587,
+                "y": -37.8231,
+                "hospital": "Albert Road Clinic",
+                "police": ["Melbourne East", "Melbourne West", "Melbourne West Precinct Policing", "South Melbourne", "Southbank", "Transit Safety Division"],
+                "pharma": 7
+            },
+            {
+                "address": "1-9 Southbank Boulevard",
+                "area": "Southbank",
+                "name": "Left Bank Melbourne",
+                "x": 144.9629,
+                "y": -37.821,
+                "hospital": "Jolimont Endoscopy Centre",
+                "police": ["Melbourne East", "Melbourne West", "Melbourne West Precinct Policing", "Southbank", "Transit Safety Division"],
+                "pharma": 14
+            },
+            {
+                "address": "8 Whiteman Street",
+                "area": "Southbank",
+                "name": "Jackpot Bar",
+                "x": 144.9587,
+                "y": -37.8231,
+                "hospital": "Albert Road Clinic",
+                "police": ["Melbourne East", "Melbourne West", "Melbourne West Precinct Policing", "South Melbourne", "Southbank", "Transit Safety Division"],
+                "pharma": 7
+            },
+            {
+                "address": "8 Whiteman Street",
+                "area": "Southbank",
+                "name": "Atrium Bar",
+                "x": 144.9587,
+                "y": -37.8231,
+                "hospital": "Albert Road Clinic",
+                "police": ["Melbourne East", "Melbourne West", "Melbourne West Precinct Policing", "South Melbourne", "Southbank", "Transit Safety Division"],
+                "pharma": 7
+            },
+            {
+                "address": "8 Whiteman Street",
+                "area": "Southbank",
+                "name": "Velvet Bar",
+                "x": 144.9587,
+                "y": -37.8231,
+                "hospital": "Albert Road Clinic",
+                "police": ["Melbourne East", "Melbourne West", "Melbourne West Precinct Policing", "South Melbourne", "Southbank", "Transit Safety Division"],
+                "pharma": 7
+            },
+            {
+                "address": "27-45 Whiteman Street",
+                "area": "Southbank",
+                "name": "Kingpin Bowling Crown | Playtime",
+                "x": 144.9583,
+                "y": -37.8256,
+                "hospital": "Albert Road Clinic",
+                "police": ["Melbourne East", "Melbourne West", "Melbourne West Precinct Policing", "South Melbourne", "Southbank", "Transit Safety Division"],
+                "pharma": 5
+            },
+            {
+                "address": "8 Whiteman Street",
+                "area": "Southbank",
+                "name": "Therapy",
+                "x": 144.9587,
+                "y": -37.8231,
+                "hospital": "Albert Road Clinic",
+                "police": ["Melbourne East", "Melbourne West", "Melbourne West Precinct Policing", "South Melbourne", "Southbank", "Transit Safety Division"],
+                "pharma": 7
+            },
+            {
+                "address": "8 Whiteman Street",
+                "area": "Southbank",
+                "name": "The Waiting Room",
+                "x": 144.9587,
+                "y": -37.8231,
+                "hospital": "Albert Road Clinic",
+                "police": ["Melbourne East", "Melbourne West", "Melbourne West Precinct Policing", "South Melbourne", "Southbank", "Transit Safety Division"],
+                "pharma": 7
+            },
+            {
+                "address": "8 Whiteman Street",
+                "area": "Southbank",
+                "name": "The Atlantic|The Den |The Oyster Bar & Grill| Fish & Chippery by The Atlantic",
+                "x": 144.9587,
+                "y": -37.8231,
+                "hospital": "Albert Road Clinic",
+                "police": ["Melbourne East", "Melbourne West", "Melbourne West Precinct Policing", "South Melbourne", "Southbank", "Transit Safety Division"],
+                "pharma": 7
+            },
+            {
+                "address": "8 Whiteman Street",
+                "area": "Southbank",
+                "name": "Lagerfield Bar & Beer Garden",
+                "x": 144.9587,
+                "y": -37.8231,
+                "hospital": "Albert Road Clinic",
+                "police": ["Melbourne East", "Melbourne West", "Melbourne West Precinct Policing", "South Melbourne", "Southbank", "Transit Safety Division"],
+                "pharma": 7
+            },
+            {
+                "address": "8 Whiteman Street",
+                "area": "Southbank",
+                "name": "Crown Entertainment Complex",
+                "x": 144.9587,
+                "y": -37.8231,
+                "hospital": "Albert Road Clinic",
+                "police": ["Melbourne East", "Melbourne West", "Melbourne West Precinct Policing", "South Melbourne", "Southbank", "Transit Safety Division"],
+                "pharma": 7
+            },
+            {
+                "address": "20-30 Convention Centre Place",
+                "area": "Southbank",
+                "name": "West Village NYC",
+                "x": 144.9524,
+                "y": -37.8254,
+                "hospital": "Specialist Surgicentre Docklands",
+                "police": ["Melbourne West", "Melbourne West Precinct Policing", "South Melbourne", "Southbank", "Transit Safety Division"],
+                "pharma": 4
+            },
+            {
+                "address": "161-173 Domain Road",
+                "area": "South Yarra",
+                "name": "Botanical Hotel",
+                "x": 144.9817,
+                "y": -37.8343,
+                "hospital": "Albert Road Clinic",
+                "police": {},
+                "pharma": 5
+            },
+            {
+                "address": "375-385 St Kilda Road",
+                "area": "Melbourne (Remainder)",
+                "name": "Royce Hotel",
+                "x": 144.9755,
+                "y": -37.8351,
+                "hospital": "Albert Road Clinic",
+                "police": ["South Melbourne"],
+                "pharma": 4
+            },
+            {
+                "address": "65-67 Peel Street",
+                "area": "West Melbourne (Residential)",
+                "name": "The Drunken Poet Pty Ltd",
+                "x": 144.9555,
+                "y": -37.8067,
+                "hospital": "Royal Melbourne Hospital",
+                "police": ["Melbourne East", "Melbourne North", "Melbourne West", "Melbourne West Precinct Policing"],
+                "pharma": 11
+            },
+            {
+                "address": "475-477 Spencer Street",
+                "area": "West Melbourne (Residential)",
+                "name": "Hotel Spencer Bar & Dining Room",
+                "x": 144.9493,
+                "y": -37.8096,
+                "hospital": "Specialist Surgicentre Docklands",
+                "police": ["Melbourne North", "Melbourne West", "Melbourne West Precinct Policing", "Transit Safety Division"],
+                "pharma": 9
+            },
+            {
+                "address": "573-579 Spencer Street",
+                "area": "West Melbourne (Residential)",
+                "name": "McMahons",
+                "x": 144.947,
+                "y": -37.8074,
+                "hospital": "Specialist Surgicentre Docklands",
+                "police": ["Melbourne North", "Melbourne West", "Melbourne West Precinct Policing"],
+                "pharma": 6
+            }
+        ];
+
+        var pol, hos, pha, x, y, map, infoWindow, latit, longit, dest, username;
+
+        $(document).ready(function () {
+
+            // Initialize select2
+            $("#selUser").select2();
+
+            // Read selected option
+            $('#but_read').click(function () {
+                username = $('#selUser option:selected').text();
+                for (var i = 0; i < dataFromR.length; i++) {
+                    if (dataFromR[i].name == username) {
+                        pol = dataFromR[i].police;
+                        hos = dataFromR[i].hospital;
+                        pha = dataFromR[i].pharma;
+                        x = dataFromR[i].x;
+                        y = dataFromR[i].y;
+                        dest = { lat: dataFromR[i].y, lon: dataFromR[i].x }
+                    }
+
+                    if (username == "---Search Bar From Here---") {
+                        return;
+                    }
+                    else {
+                        $('#result').html
+                            (" <b> Bar Name </b>: " + username + "<br />  <b>IMPORTANT NOTE: </b>The following information are only for your convenience. In case of emergency, call 000.<br />  <b>Nearest Hospital: </b>" + hos + ". <br />  <b>Police Stations (24 hours) within 1.5 km: </b>" + pol + ". <br /> <b>Number of pharmacies nearby: </b>" + pha);
+                    }
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>
