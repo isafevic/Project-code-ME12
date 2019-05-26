@@ -1,7 +1,8 @@
 library(shiny)
+library(shinythemes)
 
-shinyUI(fluidPage(
-  titlePanel("                               Estimate your Blood Alcohol Concentration (BAC)"),
+shinyUI(fluidPage(theme = shinytheme("sandstone"),
+  titlePanel("Estimate your Blood Alcohol Concentration (BAC)"),
   
   fluidRow(
     column(3,
@@ -28,14 +29,17 @@ shinyUI(fluidPage(
                   min = 6,
                   max = 18,
                   value = 12),
+      
       helpText("The time in minutes it takes to absorb half of the alcohol of a drink.",
                "If you are completely full it might take around 18 min and if you are completely starved it will be closer to 6 min."),
+      
       sliderInput("elimination",
                   "Alcohol elimination",
                   step = 0.001,
                   min = 0.009,
                   max = 0.035,
                   value = 0.018),
+      
       helpText("The amount of % BAC you eliminate each hour.",
                "Can vary from around 0.009 %/h to 0.035 %/h with 0.018 being average.")
     ),
@@ -46,7 +50,7 @@ shinyUI(fluidPage(
       ),
       fluidRow(
         column(1),
-        column(2, 
+        column(3, 
           uiOutput("drink_time_input"),
           uiOutput("drink_type_input")
         ),
@@ -54,10 +58,15 @@ shinyUI(fluidPage(
           uiOutput("volume_text"),
           uiOutput("volume_input"),
           uiOutput("alc_perc_input"),
-          actionButton("add_drink", "Add drink!", icon = icon("glass"))
+          fluidRow(column(12, offset = 4,actionButton("add_drink", "Add drink!", icon = icon("glass"),size = "large",
+                       style="color: #fff; background-color: #337ab7; border-color: #2e6da4")))
         ),
-        column(1),
+        column(4),
         column(4,
+          helpText("  ."),
+          helpText("  ."),
+          helpText("  ."),
+          helpText("  ."),
           uiOutput("drunken_drinks_input"),
           uiOutput("remove_drink_input")
         )
@@ -65,7 +74,8 @@ shinyUI(fluidPage(
       fluidRow(
         column(12, offset = 0, 
           helpText(br(), br(),  
-                   HTML("Disclaimer : The value shown above are approximate values and can be <b>extremely missleading</b>. Never use it for any serious purpose, please!"))    
+                   HTML("Disclaimer : The information shown above is for informative purpose. Please dont use it 
+                         to check the BAC level before driving (As this can vary with other factors)"))    
         )
       )
     )

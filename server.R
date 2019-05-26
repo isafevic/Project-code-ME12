@@ -142,7 +142,8 @@ shinyServer(function(input, output, session) {
   
   output$remove_drink_input <- renderUI({
     if(nrow(drinks) > 0) {
-      actionButton("remove_drink", "Remove drink", icon = icon("trash-o"))
+      fluidRow(column(6, offset = 2,actionButton("remove_drink", "Remove drink", icon = icon("trash-o"),
+                   style="color: #fff; background-color: #337ab7; border-color: #2e6da4")))
     } else {
       ""
     }
